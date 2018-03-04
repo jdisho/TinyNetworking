@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum HttpMethod<Body> {
+public enum HttpMethod<Body> {
     case get
     case post(Body)
     case delete
@@ -44,3 +44,4 @@ extension HttpMethod {
         }
     }
 }
+

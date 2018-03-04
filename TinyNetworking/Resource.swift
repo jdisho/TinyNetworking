@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Resource<Body, Response> {
+public struct Resource<Body, Response> {
     let url: URL
     let token: String?
     let method: HttpMethod<Data?>
@@ -16,7 +16,7 @@ struct Resource<Body, Response> {
     let parameters: [URLQueryItem]?
 }
 
-extension Resource {
+public extension Resource {
     init(url: URL,
          token: String? = nil,
          method: HttpMethod<Body> = .get,
@@ -37,7 +37,7 @@ extension Resource {
     }
 }
 
-extension Resource where Body: Encodable, Response: Decodable {
+public extension Resource where Body: Encodable, Response: Decodable {
     init(url: URL,
          token: String? = nil,
          method: HttpMethod<Body> = .get,
@@ -51,7 +51,7 @@ extension Resource where Body: Encodable, Response: Decodable {
     }
 }
 
-extension Resource where Body == Void, Response: Decodable {
+public extension Resource where Body == Void, Response: Decodable {
     init(url: URL,
          token: String? = nil,
          method: HttpMethod<Body> = .get,
@@ -65,4 +65,5 @@ extension Resource where Body == Void, Response: Decodable {
     }
 }
 
-typealias SimpleResource<Response> = Resource<Void, Response>
+public typealias SimpleResource<Response> = Resource<Void, Response>
+

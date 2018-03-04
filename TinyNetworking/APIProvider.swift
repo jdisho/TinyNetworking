@@ -9,22 +9,23 @@
 import Foundation
 import RxSwift
 
-final class APIProvider {
+public enum Result<T> {
+    case success(T)
+    case error(Error)
+}
 
-    enum APIError: Error {
-        case emptyResult
-        case decodingFailed
-        case requestFailed
-    }
+private enum APIError: Error {
+    case emptyResult
+    case decodingFailed
+    case requestFailed
+}
 
-    enum Result<T> {
-        case success(T)
-        case error(Error)
-    }
+public class APIProvider {
 
-    func request<Body, Response>(_ resource: Resource<Body, Response>,
-                                 session: URLSession = URLSession.shared,
-                                 completion: @escaping (Result<Response>) -> Void) {
+    public init() {}
+    public func request<Body, Response>(_ resource: Resource<Body, Response>,
+                                        session: URLSession = URLSession.shared,
+                                        completion: @escaping (Result<Response>) -> Void) {
 
         let request = URLRequest(resource: resource)
         session.dataTask(with: request) { data, response, error in
@@ -34,8 +35,8 @@ final class APIProvider {
             }
             guard let response = response as? HTTPURLResponse,
                 200..<300 ~= response.statusCode else {
-                completion(.error(APIError.requestFailed))
-                return
+                    completion(.error(APIError.requestFailed))
+                    return
             }
             guard let result = resource.decode(data) else {
                 completion(.error(APIError.decodingFailed))
@@ -43,12 +44,12 @@ final class APIProvider {
             }
 
             completion(.success(result))
-        }
-        .resume()
+            }
+            .resume()
     }
 
-    func request<Body, Response>(_ resource: Resource<Body, Response>,
-                                 session: URLSession = URLSession.shared) -> Single<Response> {
+    public func request<Body, Response>(_ resource: Resource<Body, Response>,
+                                        session: URLSession = URLSession.shared) -> Single<Response> {
 
         return Single.create { single in
             let request = URLRequest(resource: resource)
@@ -78,3 +79,4 @@ final class APIProvider {
         }
     }
 }
+

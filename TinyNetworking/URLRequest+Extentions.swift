@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension URLRequest {
+public extension URLRequest {
 
     init<Body, Response>(resource: Resource<Body, Response>) {
         var urlComponents = URLComponents(string: resource.url.absoluteString)
@@ -28,3 +28,4 @@ extension URLRequest {
         }
     }
 }
+
