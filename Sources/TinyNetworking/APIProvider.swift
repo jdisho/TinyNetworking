@@ -16,7 +16,7 @@ public enum Result<T> {
 public enum APIError: Error {
     case emptyResult
     case decodingFailed
-    case requestFailed
+    case requestFailed(withStatusCode: Int)
 }
 
 public class APIProvider {
@@ -29,13 +29,14 @@ public class APIProvider {
         let request = URLRequest(resource: resource)
         session.dataTask(with: request) { data, response, error in
             guard let data = data else {
-                completion(.error(error ?? APIError.decodingFailed))
+                completion(.error(error ?? APIError.emptyResult))
                 return
             }
-            guard let response = response as? HTTPURLResponse,
-                200..<300 ~= response.statusCode else {
-                    completion(.error(APIError.requestFailed))
+            if let response = response as? HTTPURLResponse {
+                guard 200..<300 ~= response.statusCode else {
+                    completion(.error(APIError.requestFailed(withStatusCode: response.statusCode)))
                     return
+                }
             }
             guard let result = resource.decode(data) else {
                 completion(.error(APIError.decodingFailed))

@@ -24,10 +24,11 @@ public extension Reactive where Base: APIProvider {
                     single(.error(error ?? APIError.emptyResult))
                     return
                 }
-                guard let response = response as? HTTPURLResponse,
-                    200..<300 ~= response.statusCode else {
-                        single(.error(APIError.requestFailed))
+                if let response = response as? HTTPURLResponse {
+                    guard 200..<300 ~= response.statusCode else {
+                        single(.error(APIError.requestFailed(withStatusCode: response.statusCode)))
                         return
+                    }
                 }
                 guard let result = resource.decode(data) else {
                     single(.error(APIError.decodingFailed))
