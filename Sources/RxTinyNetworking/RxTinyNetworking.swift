@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import TinyNetworking
 
+extension APIProvider: ReactiveCompatible {}
+
 public extension Reactive where Base: APIProvider {
 
     public func request<Body, Response>(_ resource: Resource<Body, Response>,
