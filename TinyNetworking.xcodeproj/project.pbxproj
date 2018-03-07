@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96C3C26740A62F5BBD2EDBFB /* Pods_TinyNetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BB9B959956EB7D07FB5338 /* Pods_TinyNetworkingTests.framework */; };
+		AA0AFB4D47A6BEAD7606D86D /* Pods_RxTinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80D530C0C109729BC53C62F /* Pods_RxTinyNetworking.framework */; };
+		B4A401851D89FE860B1562D7 /* Pods_TinyNetworking_RxTinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9864C1C8F2DF90B71F954ACE /* Pods_TinyNetworking_RxTinyNetworking.framework */; };
 		DC320FD0204BFD760055A938 /* TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC320FC6204BFD760055A938 /* TinyNetworking.framework */; };
 		DC320FD5204BFD760055A938 /* TinyNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FD4204BFD760055A938 /* TinyNetworkingTests.swift */; };
 		DC320FE4204BFD8E0055A938 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE0204BFD8E0055A938 /* HttpMethod.swift */; };
 		DC320FE5204BFD8E0055A938 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE1204BFD8E0055A938 /* Resource.swift */; };
 		DC320FE6204BFD8E0055A938 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE2204BFD8E0055A938 /* APIProvider.swift */; };
 		DC320FE7204BFD8E0055A938 /* URLRequest+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */; };
+		DC581D3A204F55F400FCBB4E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC320FCA204BFD760055A938 /* Info.plist */; };
+		DC581D49204F575200FCBB4E /* RxTinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC581D48204F575200FCBB4E /* RxTinyNetworking.swift */; };
 		E227DFA5CD66DCF947304FE6 /* Pods_TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,9 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CF8677A2889E794FDF82D98 /* Pods-TinyNetworking-RxTinyNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyNetworking-RxTinyNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyNetworking-RxTinyNetworking/Pods-TinyNetworking-RxTinyNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		37268BB9A260E967F4749EAA /* Pods-RxTinyNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTinyNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTinyNetworking/Pods-RxTinyNetworking.release.xcconfig"; sourceTree = "<group>"; };
 		4E8105C3BB203288E77380C2 /* Pods-TinyNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyNetworking/Pods-TinyNetworking.debug.xcconfig"; sourceTree = "<group>"; };
-		52E76DEC3C363DCB07714001 /* Pods-TinyNetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyNetworkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyNetworkingTests/Pods-TinyNetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		880E807E111713DF134A31EE /* Pods-TinyNetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyNetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyNetworkingTests/Pods-TinyNetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		8200CB7F92EAF4E103ED3A9E /* Pods-RxTinyNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTinyNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTinyNetworking/Pods-RxTinyNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		8929E43197EB788743E9F8E1 /* Pods-TinyNetworking-RxTinyNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyNetworking-RxTinyNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyNetworking-RxTinyNetworking/Pods-TinyNetworking-RxTinyNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		9864C1C8F2DF90B71F954ACE /* Pods_TinyNetworking_RxTinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworking_RxTinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BB9B959956EB7D07FB5338 /* Pods_TinyNetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC320FC6204BFD760055A938 /* TinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,10 +44,14 @@
 		DC320FCF204BFD760055A938 /* TinyNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC320FD4204BFD760055A938 /* TinyNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNetworkingTests.swift; sourceTree = "<group>"; };
 		DC320FD6204BFD760055A938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC320FE0204BFD8E0055A938 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpMethod.swift; path = "../../untitled folder/HttpMethod.swift"; sourceTree = "<group>"; };
-		DC320FE1204BFD8E0055A938 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = "../../untitled folder/Resource.swift"; sourceTree = "<group>"; };
-		DC320FE2204BFD8E0055A938 /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIProvider.swift; path = "../../untitled folder/APIProvider.swift"; sourceTree = "<group>"; };
-		DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URLRequest+Extentions.swift"; path = "../../untitled folder/URLRequest+Extentions.swift"; sourceTree = "<group>"; };
+		DC320FE0204BFD8E0055A938 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		DC320FE1204BFD8E0055A938 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		DC320FE2204BFD8E0055A938 /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extentions.swift"; sourceTree = "<group>"; };
+		DC581D40204F573A00FCBB4E /* RxTinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxTinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC581D43204F573A00FCBB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC581D48204F575200FCBB4E /* RxTinyNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTinyNetworking.swift; sourceTree = "<group>"; };
+		E80D530C0C109729BC53C62F /* Pods_RxTinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EBD579AAEFD86D690E1216 /* Pods-TinyNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyNetworking/Pods-TinyNetworking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +69,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC320FD0204BFD760055A938 /* TinyNetworking.framework in Frameworks */,
-				96C3C26740A62F5BBD2EDBFB /* Pods_TinyNetworkingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC581D3C204F573A00FCBB4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0AFB4D47A6BEAD7606D86D /* Pods_RxTinyNetworking.framework in Frameworks */,
+				B4A401851D89FE860B1562D7 /* Pods_TinyNetworking_RxTinyNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +89,8 @@
 			children = (
 				C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */,
 				B0BB9B959956EB7D07FB5338 /* Pods_TinyNetworkingTests.framework */,
+				E80D530C0C109729BC53C62F /* Pods_RxTinyNetworking.framework */,
+				9864C1C8F2DF90B71F954ACE /* Pods_TinyNetworking_RxTinyNetworking.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,8 +100,10 @@
 			children = (
 				4E8105C3BB203288E77380C2 /* Pods-TinyNetworking.debug.xcconfig */,
 				F5EBD579AAEFD86D690E1216 /* Pods-TinyNetworking.release.xcconfig */,
-				52E76DEC3C363DCB07714001 /* Pods-TinyNetworkingTests.debug.xcconfig */,
-				880E807E111713DF134A31EE /* Pods-TinyNetworkingTests.release.xcconfig */,
+				8200CB7F92EAF4E103ED3A9E /* Pods-RxTinyNetworking.debug.xcconfig */,
+				37268BB9A260E967F4749EAA /* Pods-RxTinyNetworking.release.xcconfig */,
+				1CF8677A2889E794FDF82D98 /* Pods-TinyNetworking-RxTinyNetworking.debug.xcconfig */,
+				8929E43197EB788743E9F8E1 /* Pods-TinyNetworking-RxTinyNetworking.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -89,8 +111,8 @@
 		DC320FBC204BFD760055A938 = {
 			isa = PBXGroup;
 			children = (
-				DC320FC8204BFD760055A938 /* TinyNetworking */,
-				DC320FD3204BFD760055A938 /* TinyNetworkingTests */,
+				DC581D4C204FE7DD00FCBB4E /* Sources */,
+				DC320FD3204BFD760055A938 /* Tests */,
 				DC320FC7204BFD760055A938 /* Products */,
 				C81C441F66D8FA6805326D73 /* Pods */,
 				BE7CF738A5C7EB98B4CC287F /* Frameworks */,
@@ -102,6 +124,7 @@
 			children = (
 				DC320FC6204BFD760055A938 /* TinyNetworking.framework */,
 				DC320FCF204BFD760055A938 /* TinyNetworkingTests.xctest */,
+				DC581D40204F573A00FCBB4E /* RxTinyNetworking.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,19 +141,44 @@
 			path = TinyNetworking;
 			sourceTree = "<group>";
 		};
-		DC320FD3204BFD760055A938 /* TinyNetworkingTests */ = {
+		DC320FD3204BFD760055A938 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				DC320FD4204BFD760055A938 /* TinyNetworkingTests.swift */,
 				DC320FD6204BFD760055A938 /* Info.plist */,
 			);
-			path = TinyNetworkingTests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		DC581D41204F573A00FCBB4E /* RxTinyNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				DC581D43204F573A00FCBB4E /* Info.plist */,
+				DC581D48204F575200FCBB4E /* RxTinyNetworking.swift */,
+			);
+			path = RxTinyNetworking;
+			sourceTree = "<group>";
+		};
+		DC581D4C204FE7DD00FCBB4E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DC320FC8204BFD760055A938 /* TinyNetworking */,
+				DC581D41204F573A00FCBB4E /* RxTinyNetworking */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		DC320FC3204BFD760055A938 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC581D3D204F573A00FCBB4E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -164,12 +212,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC320FDD204BFD760055A938 /* Build configuration list for PBXNativeTarget "TinyNetworkingTests" */;
 			buildPhases = (
-				B98D30DD8DDBC353292C2621 /* [CP] Check Pods Manifest.lock */,
 				DC320FCB204BFD760055A938 /* Sources */,
 				DC320FCC204BFD760055A938 /* Frameworks */,
 				DC320FCD204BFD760055A938 /* Resources */,
-				5E4769259C99244B902EFB5C /* [CP] Embed Pods Frameworks */,
-				D2B0D4DE26AE02678E5F95B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,6 +225,26 @@
 			productName = TinyNetworkingTests;
 			productReference = DC320FCF204BFD760055A938 /* TinyNetworkingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC581D3F204F573A00FCBB4E /* RxTinyNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC581D45204F573A00FCBB4E /* Build configuration list for PBXNativeTarget "RxTinyNetworking" */;
+			buildPhases = (
+				E0686049DF1938A147343FF9 /* [CP] Check Pods Manifest.lock */,
+				DC581D3B204F573A00FCBB4E /* Sources */,
+				DC581D3C204F573A00FCBB4E /* Frameworks */,
+				DC581D3D204F573A00FCBB4E /* Headers */,
+				DC581D3E204F573A00FCBB4E /* Resources */,
+				CF7DF9CF3B120B8D81A64B61 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RxTinyNetworking;
+			productName = RxTinyNetworking;
+			productReference = DC581D40204F573A00FCBB4E /* RxTinyNetworking.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -200,6 +265,11 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					DC581D3F204F573A00FCBB4E = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = DC320FC0204BFD760055A938 /* Build configuration list for PBXProject "TinyNetworking" */;
@@ -216,6 +286,7 @@
 			targets = (
 				DC320FC5204BFD760055A938 /* TinyNetworking */,
 				DC320FCE204BFD760055A938 /* TinyNetworkingTests */,
+				DC581D3F204F573A00FCBB4E /* RxTinyNetworking */,
 			);
 		};
 /* End PBXProject section */
@@ -225,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC581D3A204F55F400FCBB4E /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,27 +307,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5E4769259C99244B902EFB5C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
+		DC581D3E204F573A00FCBB4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TinyNetworkingTests/Pods-TinyNetworkingTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyNetworkingTests/Pods-TinyNetworkingTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
 		6D7C5716D30FD4096567AE2B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,24 +330,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyNetworking/Pods-TinyNetworking-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B98D30DD8DDBC353292C2621 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TinyNetworkingTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C1530A4B593A1A3CEF9AA0B9 /* [CP] Check Pods Manifest.lock */ = {
@@ -307,7 +350,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D2B0D4DE26AE02678E5F95B3 /* [CP] Copy Pods Resources */ = {
+		CF7DF9CF3B120B8D81A64B61 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -319,7 +362,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyNetworkingTests/Pods-TinyNetworkingTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyNetworking-RxTinyNetworking/Pods-TinyNetworking-RxTinyNetworking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0686049DF1938A147343FF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinyNetworking-RxTinyNetworking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -341,6 +402,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC320FD5204BFD760055A938 /* TinyNetworkingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC581D3B204F573A00FCBB4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC581D49204F575200FCBB4E /* RxTinyNetworking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +549,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TinyNetworking/Info.plist;
+				INFOPLIST_FILE = Sources/TinyNetworking/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = disho.TinyNetworking;
@@ -504,7 +573,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TinyNetworking/Info.plist;
+				INFOPLIST_FILE = Sources/TinyNetworking/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = disho.TinyNetworking;
@@ -517,7 +586,6 @@
 		};
 		DC320FDE204BFD760055A938 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52E76DEC3C363DCB07714001 /* Pods-TinyNetworkingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -533,7 +601,6 @@
 		};
 		DC320FDF204BFD760055A938 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 880E807E111713DF134A31EE /* Pods-TinyNetworkingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -542,6 +609,53 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = disho.TinyNetworkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC581D46204F573A00FCBB4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CF8677A2889E794FDF82D98 /* Pods-TinyNetworking-RxTinyNetworking.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YLLL7FKAFL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/RxTinyNetworking/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = disho.RxTinyNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC581D47204F573A00FCBB4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8929E43197EB788743E9F8E1 /* Pods-TinyNetworking-RxTinyNetworking.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YLLL7FKAFL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/RxTinyNetworking/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = disho.RxTinyNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -573,6 +687,15 @@
 			buildConfigurations = (
 				DC320FDE204BFD760055A938 /* Debug */,
 				DC320FDF204BFD760055A938 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC581D45204F573A00FCBB4E /* Build configuration list for PBXNativeTarget "RxTinyNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC581D46204F573A00FCBB4E /* Debug */,
+				DC581D47204F573A00FCBB4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -16,14 +16,13 @@ public extension URLRequest {
 
         self.init(url: urlComponents?.url ?? resource.url)
 
-        httpMethod = resource.method.method
+        httpMethod = resource.method.value
 
-        if let token = resource.token {
-            addValue(token, forHTTPHeaderField: "Authorization")
+        for (key, value) in resource.headers {
+            addValue(value, forHTTPHeaderField: key)
         }
 
         if case let .post(data) = resource.method {
-            addValue("application/json", forHTTPHeaderField: "Content-Type")
             httpBody = data
         }
     }

@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import RxSwift
 
 public enum Result<T> {
     case success(T)
     case error(Error)
 }
 
-private enum APIError: Error {
+public enum APIError: Error {
     case emptyResult
     case decodingFailed
     case requestFailed
@@ -46,37 +45,6 @@ public class APIProvider {
             completion(.success(result))
             }
             .resume()
-    }
-
-    public func request<Body, Response>(_ resource: Resource<Body, Response>,
-                                        session: URLSession = URLSession.shared) -> Single<Response> {
-
-        return Single.create { single in
-            let request = URLRequest(resource: resource)
-            let task = session.dataTask(with: request) { data, response, error in
-                guard let data = data else {
-                    single(.error(error ?? APIError.emptyResult))
-                    return
-                }
-                guard let response = response as? HTTPURLResponse,
-                    200..<300 ~= response.statusCode else {
-                        single(.error(APIError.requestFailed))
-                        return
-                }
-                guard let result = resource.decode(data) else {
-                    single(.error(APIError.decodingFailed))
-                    return
-                }
-
-                single(.success(result))
-            }
-
-            task.resume()
-
-            return Disposables.create {
-                task.cancel()
-            }
-        }
     }
 }
 

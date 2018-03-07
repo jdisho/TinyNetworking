@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_TinyNetworkingTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_TinyNetworkingTestsVersionString[];
+FOUNDATION_EXPORT double Pods_TinyNetworking_RxTinyNetworkingVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_TinyNetworking_RxTinyNetworkingVersionString[];
 

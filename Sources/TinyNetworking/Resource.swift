@@ -9,59 +9,48 @@
 import Foundation
 
 public struct Resource<Body, Response> {
-    let url: URL
-    let token: String?
-    let method: HttpMethod<Data?>
-    let decode: (Data) -> Response?
-    let parameters: [URLQueryItem]?
-}
+    public let url: URL
+    public let method: HttpMethod<Data?>
+    public let decode: (Data) -> Response?
+    public let parameters: [URLQueryItem]?
+    public let headers: [String: String]
 
-public extension Resource {
-    init(url: URL,
-         token: String? = nil,
-         method: HttpMethod<Body> = .get,
-         parameters: [URLQueryItem]? = nil,
-         decode: @escaping (Any) -> Response?) {
-
-        self.url = url
-        self.method =  method.map { json in
-            return try? JSONSerialization.data(withJSONObject: json, options: [])
-        }
-        self.token = token
-        self.decode = { data in
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let jsonResponse = json as? Response else { return nil }
-            return jsonResponse
-        }
-        self.parameters = parameters
+    public func addHeader(key: String, value: String) -> Resource<Body, Response> {
+        var headers = self.headers
+        headers[key] = value
+        return Resource<Body, Response>(url: url,
+                                        method: method,
+                                        decode: decode,
+                                        parameters: parameters,
+                                        headers: headers)
     }
 }
 
 public extension Resource where Body: Encodable, Response: Decodable {
     init(url: URL,
-         token: String? = nil,
          method: HttpMethod<Body> = .get,
-         parameters: [URLQueryItem]? = nil) {
+         parameters: [URLQueryItem]? = nil,
+         headers: [String: String] = [:]) {
 
         self.url = url
         self.method =  method.map { try? JSONEncoder().encode($0) }
-        self.token = token
-        self.decode = {  try? JSONDecoder().decode(Response.self, from: $0) }
+        self.decode = { try? JSONDecoder().decode(Response.self, from: $0) }
         self.parameters = parameters
+        self.headers = headers
     }
 }
 
 public extension Resource where Body == Void, Response: Decodable {
     init(url: URL,
-         token: String? = nil,
          method: HttpMethod<Body> = .get,
-         parameters: [URLQueryItem]? = nil) {
+         parameters: [URLQueryItem]? = nil,
+         headers: [String: String] = [:]) {
 
         self.url = url
         self.method =  method.map { _ in return nil }
-        self.token = token
         self.decode = { try? JSONDecoder().decode(Response.self, from: $0) }
         self.parameters = parameters
+        self.headers = headers
     }
 }
 
