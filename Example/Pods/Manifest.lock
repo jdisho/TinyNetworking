@@ -1,0 +1,14 @@
+PODS:
+  - TinyNetworking (0.2.1):
+    - TinyNetworking/Core (= 0.2.1)
+  - TinyNetworking/Core (0.2.1)
+
+DEPENDENCIES:
+  - TinyNetworking
+
+SPEC CHECKSUMS:
+  TinyNetworking: 326edf0f85dd60093ecea278223dad847872ff48
+
+PODFILE CHECKSUM: a5d821c604f93a42ae69bb55ff04c42b26af5641
+
+COCOAPODS: 1.4.0
