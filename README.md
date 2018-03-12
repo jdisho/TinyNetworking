@@ -118,7 +118,7 @@ let apiProvider = APIProvider()
 let resource = SimpleResource<Response Type>(url: URL(string: "..."))
 
 apiProvider.request(resource) { results in
-  switch result {
+  switch results {
     case let .success(response):
       print(response)
     case let .error(error):
