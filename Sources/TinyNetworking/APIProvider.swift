@@ -25,9 +25,10 @@ public class APIProvider {
 
     public init() {}
 
-    @discardableResult func performRequest<Body, Response>(_ resource: Resource<Body, Response>,
-                                                           session: URLSession = URLSession.shared,
-                                                           completion: @escaping (Result<Response>) -> Void) -> URLSessionDataTask {
+    @discardableResult
+    public func performRequest<Body, Response>(_ resource: Resource<Body, Response>,
+                                        session: URLSession = URLSession.shared,
+                                        completion: @escaping (Result<Response>) -> Void) -> URLSessionDataTask {
         let request = URLRequest(resource: resource)
         let dataTask = session.dataTask(with: request) { data, response, error in
             guard error == nil else {
