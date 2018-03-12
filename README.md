@@ -47,7 +47,7 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
-### CocoaPods 
+### Carthage 
 *Comming Soon*
 
 ### Swift Package Manager 
