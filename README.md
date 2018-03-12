@@ -14,6 +14,7 @@ TinyNetworking is a simple network layer written in Swift.
 - Supports CRUD methods (GET, POST, PUT, DELETE). ✌️
 - No external dependencies. 🎉
 - Works if you can determine how your data is being represented in JSON. 😇
+- Works for non JSON types as well.
 - Highly inspired by: https://talk.objc.io/episodes/S01E01-tiny-networking-library ❤️
 
 ## 🛠 Installation
@@ -35,7 +36,6 @@ target '<Your Target Name>' do
     #or
     
     pod 'TinyNetworking/RxSwift', '~> 0.2' # for the RxSwift extentions
-end
 ```
 
 Then, run the following command:
