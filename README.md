@@ -127,10 +127,10 @@ apiProvider.request(resource) { results in
 }
 ```
 
-### 🔥 Reactive Extensions
+## 🔥 Reactive Extensions
 Reactive extensions are cool. TinyNetworking provides reactive extensions for RxSwift and **soon** for ReactiveSwift.
 
-## RxSwift
+### RxSwift
 ```swift
 apiProvider.rx.request(resource).subscribe { event in
    switch event {
@@ -142,7 +142,7 @@ apiProvider.rx.request(resource).subscribe { event in
 }
 ```
 
-### 🐨 Author
+## 🐨 Author
 This tiny library is created with ❤️ by [Joan Disho](https://twitter.com/_disho) at [QuickBird Studios](www.quickbirdstudios.com)
 
 ## 🙏 Acknowledgements
