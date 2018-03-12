@@ -29,10 +29,6 @@ $ gem install cocoapods
 To integrate TinyNetworking into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
-use_frameworks!
-
 target '<Your Target Name>' do
     pod 'TinyNetworking', '~> 0.2'
     
@@ -60,7 +56,7 @@ If you prefer not to use any of the dependency managers, you can integrate TinyN
 ## 👨🏻‍💻 Usage
 
 ### 📦 Resouce
-Resouce is the code part of TinyNetworking and is generic over the result type.
+Resouce is the core part of TinyNetworking and is generic over the result type.
 
 Resource has five properties: 
 
