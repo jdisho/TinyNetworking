@@ -145,6 +145,9 @@ apiProvider.rx.request(resource).subscribe { event in
 ### 🐨 Author
 This tiny library is created with ❤️ by [Joan Disho](https://twitter.com/_disho) at [QuickBird Studios](www.quickbirdstudios.com)
 
+## 🙏 Acknowledgements
+This library is highly insipired on these amazing [talks](https://talk.objc.io/collections/networking) by **Chris Eidhof** and **Florian Kugler** at Swift Talk
+
 ### 📃 License
 
 TinyNetworking is released under an MIT license. See [License.md](License.md) for more information.
