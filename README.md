@@ -30,12 +30,11 @@ $ gem install cocoapods
 To integrate TinyNetworking into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-target '<Your Target Name>' do
-    pod 'TinyNetworking', '~> 0.2'
+pod 'TinyNetworking', '~> 0.2'
     
-    #or
+#or
     
-    pod 'TinyNetworking/RxSwift', '~> 0.2' # for the RxSwift extentions
+pod 'TinyNetworking/RxSwift', '~> 0.2' # for the RxSwift extentions
 ```
 
 Then, run the following command:
@@ -146,4 +145,4 @@ This library is highly insipired on these amazing [talks](https://talk.objc.io/c
 
 ### 📃 License
 
-TinyNetworking is released under an MIT license. See [License.md](License.md) for more information.
+TinyNetworking is released under an MIT license. See [License.md](https://github.com/jdisho/TinyNetworking/blob/master/LICENSE) for more information.
