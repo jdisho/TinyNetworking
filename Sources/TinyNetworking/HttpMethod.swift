@@ -16,6 +16,7 @@ public enum HttpMethod<Body> {
 }
 
 extension HttpMethod {
+
     var value: String {
         switch self {
         case .get:
@@ -28,9 +29,11 @@ extension HttpMethod {
             return "PUT"
         }
     }
+
 }
 
 extension HttpMethod {
+
     func map<T>(_ transform: (Body) -> T) -> HttpMethod<T> {
         switch self {
         case .get:
@@ -43,5 +46,6 @@ extension HttpMethod {
             return .put(transform(body))
         }
     }
+
 }
 

@@ -10,42 +10,67 @@ import Foundation
 
 public enum Result<T> {
     case success(T)
-    case error(Error)
+    case error(APIError)
 }
 
 public enum APIError: Error {
+    case networkError(Error?)
     case emptyResult
-    case decodingFailed
-    case requestFailed(withStatusCode: Int)
+    case decodingFailed(Error?)
+    case noHttpResponse
+    case requestFailed(statusCode: Int)
 }
 
 public class APIProvider {
 
     public init() {}
+
+    @discardableResult
+    func performRequest<Body, Response>(_ resource: Resource<Body, Response>,
+                                        session: URLSession = URLSession.shared,
+                                        completion: @escaping (Result<Response>) -> Void) -> URLSessionDataTask {
+        let request = URLRequest(resource: resource)
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            guard error == nil else {
+                completion(.error(APIError.networkError(error)))
+                return
+            }
+
+            guard let data = data else {
+                completion(.error(APIError.emptyResult))
+                return
+            }
+
+            guard let response = response as? HTTPURLResponse else {
+                completion(.error(APIError.noHttpResponse))
+                return
+            }
+
+            guard 200..<300 ~= response.statusCode else {
+                completion(.error(APIError.requestFailed(statusCode: response.statusCode)))
+                return
+            }
+
+            do {
+                guard let result = try resource.decode(data) else {
+                    completion(.error(APIError.decodingFailed(nil)))
+                    return
+                }
+
+                completion(.success(result))
+            } catch {
+                completion(.error(APIError.decodingFailed(error)))
+            }
+        }
+
+        dataTask.resume()
+        return dataTask
+    }
+
     public func request<Body, Response>(_ resource: Resource<Body, Response>,
                                         session: URLSession = URLSession.shared,
                                         completion: @escaping (Result<Response>) -> Void) {
-
-        let request = URLRequest(resource: resource)
-        session.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                completion(.error(error ?? APIError.emptyResult))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                guard 200..<300 ~= response.statusCode else {
-                    completion(.error(APIError.requestFailed(withStatusCode: response.statusCode)))
-                    return
-                }
-            }
-            guard let result = resource.decode(data) else {
-                completion(.error(APIError.decodingFailed))
-                return
-            }
-
-            completion(.success(result))
-            }
-            .resume()
+        performRequest(resource, session: session, completion: completion)
     }
-}
 
+}

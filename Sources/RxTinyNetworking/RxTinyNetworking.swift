@@ -10,12 +10,14 @@ import Foundation
 import RxSwift
 import TinyNetworking
 
-extension APIProvider: ReactiveCompatible {}
+extension TinyNetworking: ReactiveCompatible {}
 
-public extension Reactive where Base: APIProvider {
+public extension Reactive where Base: TinyNetworking {
 
-    public func request<Body, Response>(_ resource: Resource<Body, Response>,
-                                        session: URLSession = URLSession.shared) -> Single<Response> {
+    public func request<Body, Response>(
+        _ resource: Resource<Body, Response>,
+        session: URLSession = URLSession.shared
+        ) -> Single<Response> {
         return Single.create { single in
             let task = self.base.performRequest(resource, session: session){ result in
                 switch result {

@@ -11,10 +11,8 @@ import Foundation
 public extension URLRequest {
 
     init<Body, Response>(resource: Resource<Body, Response>) {
-        var urlComponents = URLComponents(string: resource.url.absoluteString)
-        urlComponents?.queryItems = resource.parameters
-
-        self.init(url: urlComponents?.url ?? resource.url)
+        let url = resource.url
+        self.init(url: url.appendingQueryParameters(resource.parameters) ?? url)
 
         httpMethod = resource.method.value
 
@@ -27,4 +25,3 @@ public extension URLRequest {
         }
     }
 }
-

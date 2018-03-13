@@ -1,9 +1,9 @@
 //
 //  ImageURLs.swift
-//  TinyExample
+//  Papr
 //
-//  Created by Joan Disho on 11.03.18.
-//  Copyright © 2018 Joan Disho. All rights reserved.
+//  Created by Joan Disho on 03.11.17.
+//  Copyright © 2017 Joan Disho. All rights reserved.
 //
 
 struct ImageURLs: Decodable {
