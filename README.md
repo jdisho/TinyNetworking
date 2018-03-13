@@ -30,11 +30,11 @@ $ gem install cocoapods
 To integrate TinyNetworking into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'TinyNetworking', '~> 0.2'
+pod 'TinyNetworking', '~> 0.3'
     
 #or
     
-pod 'TinyNetworking/RxSwift', '~> 0.2' # for the RxSwift extentions
+pod 'TinyNetworking/RxSwift', '~> 0.3' # for the RxSwift extentions
 ```
 
 Then, run the following command:
@@ -61,10 +61,10 @@ Resource has five properties:
 
 |    Properties     |   |
 ----------|-----------------
-URL of the endpoint | required ‼️
+URL | URL of the endpoint ‼️
 Request method | by default `GET`, but required for `PUT`, `POST`, `DELETE` ⚠️
-Parameters | optional ❓
-Headers | optional ❓
+Parameters | **only** [String: String]❓
+Headers | [String: String] ❓
 Decoding function | by default `JSONDecoding`, but required if you want to implement your decoding function. ⚠️
 
 #### Create Resource
@@ -102,17 +102,35 @@ Resource<Body Type,  Response Type>(url: URL(string: "..."), .put(*body*))
 Resource<Body Type,  Response Type>(url: URL(string: "..."), .delete(*body*))
 ```
 
+#### 💄 Add parameters
+
+```swift
+var params: [String: String] = [:]
+params["page"] = "1"
+params["per_page"] = "10"
+params["order_by"] = "popular"
+
+SimpleResource<Response Type>(url: URL(string: "..."), parameters: params)
+```
+
+#### 🎩 Add header
+
+```swift
+let resource = SimpleResource<Response Type>(url: URL(string: "..."))
+resource.addHeader(key: "...", value: "...")
+```
+
 ### ⚙️ Making and handling a request
 The Resouce is useless until is part of a request:
 
 ```swift
 import TinyNetworking
 
-let apiProvider = APIProvider()
+let tinyNetworking = TinyNetworking()
 
 let resource = SimpleResource<Response Type>(url: URL(string: "..."))
 
-apiProvider.request(resource) { results in
+tinyNetworking.request(resource) { results in
   switch results {
     case let .success(response):
       print(response)
@@ -127,7 +145,7 @@ Reactive extensions are cool. TinyNetworking provides reactive extensions for Rx
 
 ### RxSwift
 ```swift
-apiProvider.rx.request(resource).subscribe { event in
+tinyNetworking.rx.request(resource).subscribe { event in
    switch event {
    case let .success(response):
       print(response)
