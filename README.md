@@ -48,8 +48,8 @@ If you prefer not to use any of the dependency managers, you can integrate TinyN
 
 ## 👨🏻‍💻 Usage
 
-### 📦 Resouce
-Resouce is the core part of TinyNetworking and is generic over the result type.
+### 📦 Resource
+Resource is the core part of TinyNetworking and is generic over the result type.
 
 Resource has five properties: 
 
