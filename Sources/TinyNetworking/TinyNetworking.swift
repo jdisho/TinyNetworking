@@ -8,69 +8,61 @@
 
 import Foundation
 
-public class TinyNetworking {
+public enum TinyNetworkingResult<T> {
+    case success(T)
+    case error(TinyNetworkingError)
+}
 
-    public enum Result<T> {
-        case success(T)
-        case error(APIError)
-    }
+public enum TinyNetworkingError: Error {
+    case error(Error?)
+    case emptyResult
+    case decodingFailed(Error?)
+    case noHttpResponse
+    case requestFailed(Data)
+}
 
-    public enum APIError: Error {
-        case networkError(Error?)
-        case emptyResult
-        case decodingFailed(Error?)
-        case noHttpResponse
-        case requestFailed(statusCode: Int)
-    }
+public class TinyNetworking<Target: TargetType>: TinyNetworkingType {
 
     public init() {}
 
     @discardableResult
-    public func performRequest<Body, Response>(
-        _ resource: Resource<Body, Response>,
+    public func request(
+        target: Target,
         session: URLSession = URLSession.shared,
-        completion: @escaping (Result<Response>) -> Void
+        completion: @escaping (TinyNetworkingResult<Decodable>) -> Void
         ) -> URLSessionDataTask {
-        let request = URLRequest(resource: resource)
+        let request = URLRequest(target: target)
+
         let dataTask = session.dataTask(with: request) { data, response, error in
             guard error == nil else {
-                completion(.error(APIError.networkError(error)))
+                completion(.error(.error(error)))
                 return
             }
             guard let data = data else {
-                completion(.error(APIError.emptyResult))
+                completion(.error(.emptyResult))
                 return
             }
             guard let response = response as? HTTPURLResponse else {
-                completion(.error(APIError.noHttpResponse))
+                completion(.error(.noHttpResponse))
                 return
             }
             guard 200..<300 ~= response.statusCode else {
-                completion(.error(APIError.requestFailed(statusCode: response.statusCode)))
+                completion(.error(.requestFailed(data)))
                 return
             }
             do {
-                guard let result = try resource.decode(data) else {
-                    completion(.error(APIError.decodingFailed(nil)))
+                guard let result = try target.resource.decode(data) else {
+                    completion(.error(.decodingFailed(nil)))
                     return
                 }
-
                 completion(.success(result))
             } catch {
-                completion(.error(APIError.decodingFailed(error)))
+                completion(.error(.decodingFailed(error)))
             }
         }
 
         dataTask.resume()
         return dataTask
     }
-
-    public func request<Body, Response>(
-        _ resource: Resource<Body, Response>,
-        session: URLSession = URLSession.shared,
-        completion: @escaping (Result<Response>) -> Void
-        ) {
-        performRequest(resource, session: session, completion: completion)
-    }
-
 }
+

@@ -12,18 +12,17 @@ import TinyNetworking
 
 extension TinyNetworking: ReactiveCompatible {}
 
-public extension Reactive where Base: TinyNetworking {
-
-    public func request<Body, Response>(
-        _ resource: Resource<Body, Response>,
+public extension Reactive where Base: TinyNetworkingType {
+    func request(
+        target: Base.Target,
         session: URLSession = URLSession.shared
-        ) -> Single<Response> {
+        ) -> Single<Decodable> {
         return Single.create { single in
-            let task = self.base.performRequest(resource, session: session){ result in
+            let task = self.base.request(target: target, session: session) { result in
                 switch result {
-                case .error(let apiError):
+                case let .error(apiError):
                     single(.error(apiError))
-                case .success(let response):
+                case let .success(response):
                     single(.success(response))
                 }
             }
