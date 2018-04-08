@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA0AFB4D47A6BEAD7606D86D /* Pods_RxTinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80D530C0C109729BC53C62F /* Pods_RxTinyNetworking.framework */; };
-		B4A401851D89FE860B1562D7 /* Pods_TinyNetworking_RxTinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9864C1C8F2DF90B71F954ACE /* Pods_TinyNetworking_RxTinyNetworking.framework */; };
+		DC22B6112079483400CEB596 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACB2070427000B5915E /* Task.swift */; };
+		DC22B6122079483400CEB596 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE0204BFD8E0055A938 /* HTTPMethod.swift */; };
+		DC22B6132079483400CEB596 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACD2070427800B5915E /* AnyEncodable.swift */; };
+		DC22B6142079483400CEB596 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927AD12070428C00B5915E /* Response.swift */; };
+		DC22B6152079483400CEB596 /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACF2070428400B5915E /* ResourceType.swift */; };
+		DC22B6162079483400CEB596 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE2204BFD8E0055A938 /* TinyNetworking.swift */; };
+		DC22B6172079483400CEB596 /* TinyNetworkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD07D3206D7076001F0C35 /* TinyNetworkingType.swift */; };
+		DC22B6182079483400CEB596 /* URLRequest+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */; };
+		DC22B6192079483400CEB596 /* URL+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DE1A72058361100BCCA81 /* URL+Extentions.swift */; };
+		DC22B61B20794AF600CEB596 /* URLSession+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22B61A20794AF600CEB596 /* URLSession+Extentions.swift */; };
+		DC22B61C207950CE00CEB596 /* TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC320FC6204BFD760055A938 /* TinyNetworking.framework */; };
 		DC320FD0204BFD760055A938 /* TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC320FC6204BFD760055A938 /* TinyNetworking.framework */; };
 		DC320FD5204BFD760055A938 /* TinyNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FD4204BFD760055A938 /* TinyNetworkingTests.swift */; };
 		DC320FE4204BFD8E0055A938 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE0204BFD8E0055A938 /* HTTPMethod.swift */; };
@@ -44,6 +53,7 @@
 		9864C1C8F2DF90B71F954ACE /* Pods_TinyNetworking_RxTinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworking_RxTinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BB9B959956EB7D07FB5338 /* Pods_TinyNetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC22B61A20794AF600CEB596 /* URLSession+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extentions.swift"; sourceTree = "<group>"; };
 		DC320FC6204BFD760055A938 /* TinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC320FCA204BFD760055A938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC320FCF204BFD760055A938 /* TinyNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,8 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0AFB4D47A6BEAD7606D86D /* Pods_RxTinyNetworking.framework in Frameworks */,
-				B4A401851D89FE860B1562D7 /* Pods_TinyNetworking_RxTinyNetworking.framework in Frameworks */,
+				DC22B61C207950CE00CEB596 /* TinyNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +160,7 @@
 				DCFD07D3206D7076001F0C35 /* TinyNetworkingType.swift */,
 				DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */,
 				DC9DE1A72058361100BCCA81 /* URL+Extentions.swift */,
+				DC22B61A20794AF600CEB596 /* URLSession+Extentions.swift */,
 				DC320FCA204BFD760055A938 /* Info.plist */,
 			);
 			path = TinyNetworking;
@@ -410,6 +420,7 @@
 				DC9DE1A82058361100BCCA81 /* URL+Extentions.swift in Sources */,
 				DCFD07D5206D7076001F0C35 /* TinyNetworkingType.swift in Sources */,
 				DC927AD02070428400B5915E /* ResourceType.swift in Sources */,
+				DC22B61B20794AF600CEB596 /* URLSession+Extentions.swift in Sources */,
 				DC320FE4204BFD8E0055A938 /* HTTPMethod.swift in Sources */,
 				DC927AD22070428C00B5915E /* Response.swift in Sources */,
 				DC320FE7204BFD8E0055A938 /* URLRequest+Extentions.swift in Sources */,
@@ -421,7 +432,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC22B6192079483400CEB596 /* URL+Extentions.swift in Sources */,
+				DC22B6112079483400CEB596 /* Task.swift in Sources */,
+				DC22B6182079483400CEB596 /* URLRequest+Extentions.swift in Sources */,
+				DC22B6172079483400CEB596 /* TinyNetworkingType.swift in Sources */,
 				DC320FD5204BFD760055A938 /* TinyNetworkingTests.swift in Sources */,
+				DC22B6132079483400CEB596 /* AnyEncodable.swift in Sources */,
+				DC22B6122079483400CEB596 /* HTTPMethod.swift in Sources */,
+				DC22B6142079483400CEB596 /* Response.swift in Sources */,
+				DC22B6162079483400CEB596 /* TinyNetworking.swift in Sources */,
+				DC22B6152079483400CEB596 /* ResourceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
