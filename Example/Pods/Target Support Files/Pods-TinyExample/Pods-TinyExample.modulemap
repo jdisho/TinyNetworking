@@ -1,6 +1,0 @@
-framework module Pods_TinyExample {
-  umbrella header "Pods-TinyExample-umbrella.h"
-
-  export *
-  module * { export * }
-}
