@@ -130,6 +130,8 @@ return tinyNetworking.rx
      .request(resource: .photo(id: id))
      .map(to: Photo.self)
 ```
+## ✨ Example
+See [Papr](https://github.com/jdisho/Papr/tree/papr-tinyNetworking-version)
 
 ## 🐨 Author
 This tiny library is created with ❤️ by [Joan Disho](https://twitter.com/_disho) at [QuickBird Studios](www.quickbirdstudios.com)
