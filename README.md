@@ -69,7 +69,7 @@ enum Unsplash {
 Extend `enum` and confom to `ResourceType` protocol.
 
 ```swift
-extention Unsplash: ResourceType {
+extension Unsplash: ResourceType {
   var baseURL: URL {
     guard let url = URL(string: "https://api.unsplash.com") else {
       fatalError("FAILED: https://api.unsplash.com")
