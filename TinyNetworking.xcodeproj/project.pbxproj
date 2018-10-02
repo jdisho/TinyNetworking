@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C04F53947782F8F044C63EE /* Pods_TinyNetworking_RxTinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9864C1C8F2DF90B71F954ACE /* Pods_TinyNetworking_RxTinyNetworking.framework */; };
 		DC22B6112079483400CEB596 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACB2070427000B5915E /* Task.swift */; };
 		DC22B6122079483400CEB596 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE0204BFD8E0055A938 /* HTTPMethod.swift */; };
 		DC22B6132079483400CEB596 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACD2070427800B5915E /* AnyEncodable.swift */; };
@@ -96,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC22B61C207950CE00CEB596 /* TinyNetworking.framework in Frameworks */,
+				3C04F53947782F8F044C63EE /* Pods_TinyNetworking_RxTinyNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +223,6 @@
 				DC320FC2204BFD760055A938 /* Frameworks */,
 				DC320FC3204BFD760055A938 /* Headers */,
 				DC320FC4204BFD760055A938 /* Resources */,
-				6D7C5716D30FD4096567AE2B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,7 +260,6 @@
 				DC581D3C204F573A00FCBB4E /* Frameworks */,
 				DC581D3D204F573A00FCBB4E /* Headers */,
 				DC581D3E204F573A00FCBB4E /* Resources */,
-				CF7DF9CF3B120B8D81A64B61 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,21 +340,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6D7C5716D30FD4096567AE2B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyNetworking/Pods-TinyNetworking-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C1530A4B593A1A3CEF9AA0B9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,21 +356,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF7DF9CF3B120B8D81A64B61 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyNetworking-RxTinyNetworking/Pods-TinyNetworking-RxTinyNetworking-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E0686049DF1938A147343FF9 /* [CP] Check Pods Manifest.lock */ = {
