@@ -1,12 +1,16 @@
 PODS:
-  - RxSwift (4.1.2)
+  - RxSwift (4.3.1)
 
 DEPENDENCIES:
   - RxSwift (~> 4.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxSwift
+
 SPEC CHECKSUMS:
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
 PODFILE CHECKSUM: 4373f4c6b4bf6a71ba83bad3bbc5e0385764eea6
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
