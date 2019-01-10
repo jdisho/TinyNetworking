@@ -24,6 +24,5 @@ public class Response {
             throw TinyNetworkingError.decodingFailed(error)
         }
     }
-
 }
 

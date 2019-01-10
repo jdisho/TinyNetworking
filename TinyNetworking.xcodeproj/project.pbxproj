@@ -30,6 +30,7 @@
 		DC927AD02070428400B5915E /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACF2070428400B5915E /* ResourceType.swift */; };
 		DC927AD22070428C00B5915E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927AD12070428C00B5915E /* Response.swift */; };
 		DC9DE1A82058361100BCCA81 /* URL+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DE1A72058361100BCCA81 /* URL+Extentions.swift */; };
+		DCAED62421A7537C007BDE95 /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAED62321A7537C007BDE95 /* URLEncoding.swift */; };
 		DCFD07D5206D7076001F0C35 /* TinyNetworkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD07D3206D7076001F0C35 /* TinyNetworkingType.swift */; };
 		E227DFA5CD66DCF947304FE6 /* Pods_TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		DC927ACF2070428400B5915E /* ResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
 		DC927AD12070428C00B5915E /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		DC9DE1A72058361100BCCA81 /* URL+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extentions.swift"; sourceTree = "<group>"; };
+		DCAED62321A7537C007BDE95 /* URLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoding.swift; sourceTree = "<group>"; };
 		DCFD07D3206D7076001F0C35 /* TinyNetworkingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworkingType.swift; sourceTree = "<group>"; };
 		E80D530C0C109729BC53C62F /* Pods_RxTinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EBD579AAEFD86D690E1216 /* Pods-TinyNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyNetworking/Pods-TinyNetworking.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */,
 				DC9DE1A72058361100BCCA81 /* URL+Extentions.swift */,
 				DC22B61A20794AF600CEB596 /* URLSession+Extentions.swift */,
+				DCAED62321A7537C007BDE95 /* URLEncoding.swift */,
 				DC320FCA204BFD760055A938 /* Info.plist */,
 			);
 			path = TinyNetworking;
@@ -418,6 +421,7 @@
 				DC927ACC2070427000B5915E /* Task.swift in Sources */,
 				DC927ACE2070427800B5915E /* AnyEncodable.swift in Sources */,
 				DC9DE1A82058361100BCCA81 /* URL+Extentions.swift in Sources */,
+				DCAED62421A7537C007BDE95 /* URLEncoding.swift in Sources */,
 				DCFD07D5206D7076001F0C35 /* TinyNetworkingType.swift in Sources */,
 				DC927AD02070428400B5915E /* ResourceType.swift in Sources */,
 				DC22B61B20794AF600CEB596 /* URLSession+Extentions.swift in Sources */,

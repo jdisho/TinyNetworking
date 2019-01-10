@@ -8,12 +8,12 @@
 
 import Foundation
 
-public extension URLRequest {
+internal extension URLRequest {
     init(resource: ResourceType) {
         var url = resource.baseURL.appendingPathComponent(resource.endpoint.path)
 
-        if case let .requestWithParameters(parameters) = resource.task {
-            url = url.appendingQueryParameters(parameters)
+        if case let .requestWithParameters(parameters, encoding) = resource.task {
+            url = url.appendingQueryParameters(parameters: parameters, encoding: encoding)
         }
 
         self.init(url: url)
@@ -30,12 +30,10 @@ public extension URLRequest {
                 httpBody = encode(object: anyEncodable)
             }
         }
-
     }
 
-    internal func encode<E>(object: E) -> Data? where E : Encodable {
+    func encode<E>(object: E) -> Data? where E : Encodable {
         return try? JSONEncoder().encode(object)
     }
-
 }
 

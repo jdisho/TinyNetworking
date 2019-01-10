@@ -8,6 +8,6 @@
 import Foundation
 
 public enum Task {
-    case requestWithParameters([String: String])
+    case requestWithParameters([String: Any], encoding: URLEncoding)
     case requestWithEncodable(Encodable)
 }

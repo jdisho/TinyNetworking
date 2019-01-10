@@ -8,13 +8,10 @@
 
 import Foundation
 
-public extension URL {
-    func appendingQueryParameters(_ parameters: [String: String]) -> URL {
+internal extension URL {
+    func appendingQueryParameters(parameters: [String: Any], encoding: URLEncoding) -> URL {
         var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true)!
-        var queryItems = urlComponents.queryItems ?? []
-
-        queryItems += parameters.map { URLQueryItem(name: $0, value: $1) }
-        urlComponents.queryItems = queryItems
+        urlComponents.query = (urlComponents.percentEncodedQuery.map { $0 + "&" } ?? "") + encoding.query(parameters)
 
         return urlComponents.url!
     }

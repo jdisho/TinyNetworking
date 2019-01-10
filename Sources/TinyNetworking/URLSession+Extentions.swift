@@ -9,10 +9,10 @@
 import Foundation
 
 public protocol TinyNetworkingSession {
-    typealias completionHandler = (Data?, URLResponse?, Error?) -> Void
+    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
     func loadData(
         with urlRequest: URLRequest,
-        completionHandler: @escaping completionHandler
+        completionHandler: @escaping CompletionHandler
         ) -> URLSessionDataTask
 }
 

@@ -54,6 +54,5 @@ public class TinyNetworking<Resource: ResourceType>: TinyNetworkingType {
             completion(.success(Response(urlRequest: request, data: data)))
         }
     }
-
 }
 
