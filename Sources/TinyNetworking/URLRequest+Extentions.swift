@@ -10,7 +10,7 @@ import Foundation
 
 public extension URLRequest {
     init(resource: ResourceType) {
-        var url = resource.baseURL.appendingPathComponent(resource.endpoint)
+        var url = resource.baseURL.appendingPathComponent(resource.endpoint.path)
 
         if case let .requestWithParameters(parameters) = resource.task {
             url = url.appendingQueryParameters(parameters)
@@ -18,13 +18,13 @@ public extension URLRequest {
 
         self.init(url: url)
 
-        httpMethod = resource.method.rawValue
+        httpMethod = resource.endpoint.method.rawValue
 
         for (key, value) in resource.headers {
             addValue(value, forHTTPHeaderField: key)
         }
 
-        if resource.method == .post || resource.method == .put {
+        if resource.endpoint.method == .post || resource.endpoint.method == .put {
             if case let .requestWithEncodable(encodable) = resource.task {
                 let anyEncodable = AnyEncodable(encodable)
                 httpBody = encode(object: anyEncodable)
