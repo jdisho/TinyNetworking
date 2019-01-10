@@ -16,13 +16,14 @@
 </p>
 
 #
-TinyNetworking is a simple network abstraction layer written in Swift.
+**TinyNetworking** is a simple network abstraction layer written in Swift.
 
-- Just a tiny wrapper around NSURLSession. 🌯
-- Supports CRUD methods (GET, POST, PUT, DELETE). ✌️
-- No external dependencies. 🎉
-- Works if you can determine how your data is being represented in JSON. 😇
-- Highly inspired by [Moya](https://github.com/Moya/Moya) ❤️
+- 🌯 Just a thin wrapper around NSURLSession.
+- ✌️ Supports CRUD methods.
+- 🚦 Compile-time checking for correct API endpoint accesses.
+- 🐍 (Optional) RxSwift extensions to the API.
+- ❤️ Inspired by [Moya](https://github.com/Moya/Moya).
+- 🎉 No external dependencies. 
 
 ## 🛠 Installation
 
