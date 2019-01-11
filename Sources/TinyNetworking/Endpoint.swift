@@ -15,11 +15,12 @@ internal enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
+// Endpoint is a combination of HTTPMethod and Path.
 public enum Endpoint {
-    case get(String)
-    case post(String)
-    case put(String)
-    case delete(String)
+    case get(path: String)
+    case post(path: String)
+    case put(path: String)
+    case delete(path: String)
 
     internal var path: String {
         switch self {

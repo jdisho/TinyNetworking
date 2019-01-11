@@ -24,10 +24,26 @@ public struct URLEncoding {
         }
     }
 
-    public let arrayEncoding: ArrayEncoding
+    public enum BoolEncoding {
+        case numeric
+        case literal
 
-    public init(arrayEncoding: ArrayEncoding) {
+        public func encode(flag: Bool) -> String {
+            switch self {
+            case .numeric:
+                return flag ? "1" : "0"
+            case .literal:
+                return flag.description
+            }
+        }
+    }
+
+    public let arrayEncoding: ArrayEncoding
+    public let boolEncoding: BoolEncoding
+
+    public init(arrayEncoding: ArrayEncoding = .brackets, boolEncoding: BoolEncoding = .literal) {
         self.arrayEncoding = arrayEncoding
+        self.boolEncoding = boolEncoding
     }
 
     public func query(_ parameters: [String: Any]) -> String {
@@ -52,6 +68,8 @@ public struct URLEncoding {
             for value in array {
                 components += queryComponents(fromKey: arrayEncoding.encode(key: key), value: value)
             }
+        } else if let flag = value as? Bool {
+            components.append((key, boolEncoding.encode(flag: flag)))
         } else {
             components.append((key, "\(value)"))
         }
