@@ -7,16 +7,15 @@
 
 import Foundation
 
-class AnyEncodable: Encodable {
+struct AnyEncodable: Encodable {
 
     private let encodable: Encodable
 
-    init(_ encodable: Encodable) {
+    public init(_ encodable: Encodable) {
         self.encodable = encodable
     }
 
     func encode(to encoder: Encoder) throws {
-        try encode(to: encoder)
+        try encodable.encode(to: encoder)
     }
 }
-
