@@ -7,7 +7,7 @@
         <img src="https://img.shields.io/cocoapods/p/TinyNetworking.svg?style=flat" />
   </a>
   <a href="https://swift.org">
-        <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" />
+        <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" />
   </a>
   <a href="https://cocoapods.org/pods/TinyNetworking">
         <img src="https://img.shields.io/cocoapods/v/TinyNetworking.svg" />
