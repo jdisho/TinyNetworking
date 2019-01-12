@@ -13,7 +13,7 @@ internal extension URLRequest {
         var url = resource.baseURL.appendingPathComponent(resource.endpoint.path)
 
         if case let .requestWithParameters(parameters, encoding) = resource.task {
-            url = url.appendingQueryParameters(parameters: parameters, encoding: encoding)
+            url = url.appendingQueryParameters(parameters, encoding: encoding)
         }
 
         self.init(url: url)
