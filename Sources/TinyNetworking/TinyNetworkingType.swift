@@ -15,6 +15,7 @@ public protocol TinyNetworkingType {
     func request(
         resource: Resource,
         session: TinyNetworkingSession,
+        queue: DispatchQueue,
         completion: @escaping (TinyNetworkingResult<Response>) -> Void
         ) -> URLSessionDataTask
 }

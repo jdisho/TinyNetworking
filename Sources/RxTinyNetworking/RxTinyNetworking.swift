@@ -15,10 +15,11 @@ extension TinyNetworking: ReactiveCompatible {}
 public extension Reactive where Base: TinyNetworkingType {
     func request(
         resource: Base.Resource,
-        session: URLSession = URLSession.shared
+        session: TinyNetworkingSession = URLSession.shared,
+        queue: DispatchQueue = .main
         ) -> Single<Response> {
         return Single.create { single in
-            let task = self.base.request(resource: resource, session: session) { result in
+            let task = self.base.request(resource: resource, session: session, queue: queue) { result in
                 switch result {
                 case let .error(apiError):
                     single(.error(apiError))

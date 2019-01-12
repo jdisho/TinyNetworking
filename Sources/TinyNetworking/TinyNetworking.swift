@@ -30,10 +30,11 @@ public class TinyNetworking<Resource: ResourceType>: TinyNetworkingType {
     public func request(
         resource: Resource,
         session: TinyNetworkingSession = URLSession.shared,
+        queue: DispatchQueue = .main,
         completion: @escaping (TinyNetworkingResult<Response>) -> Void
         ) -> URLSessionDataTask {
         let request = URLRequest(resource: resource)
-        return session.loadData(with: request) { data, response, error in
+        return session.loadData(with: request, queue: queue) { data, response, error in
             guard error == nil else {
                 completion(.error(.error(error)))
                 return
