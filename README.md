@@ -78,32 +78,22 @@ extension Unsplash: ResourceType {
     return url
   }
   
-  var endpoint: String {
+  var endpoint: Endpoint {
     switch self {
     case .me:
-      return "/me"
+      return .get(path: "/me")
     case let .photo(id):
-      return "/photos/\(id)"
+      return .get(path: "/photos/\(id)")
     case let .collection(id):
-      return "/collections/\(id)"
+      return .get(path: "/collections/\(id)")
     case let .likePhoto(id):
-      return "/photos/\(id)/like"
+      return .post(path: "/photos/\(id)/like")
     }
   }
-  
-  var method: HTTPMethod {
-    switch self {
-      case .me, .photo, .collection:
-        return .get
-      case .likePhoto:
-        return .post
-    }
-  }
-  
-  // Sends paramters in URL or in HTTP Body
+ 
   var task: Task {
-    var params = [:]
-    return .requestWithParameters(params)
+    var params: [String: Any] = [:]
+    return .requestWithParameters(params, encoding: URLEncoding())
   }
   
   var headers: [String: String] {
