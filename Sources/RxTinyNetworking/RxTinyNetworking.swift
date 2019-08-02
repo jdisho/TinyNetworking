@@ -41,7 +41,7 @@ public extension Reactive where Base: TinyNetworkingType {
 
 // MARK: Single
 
-extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
+extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
 
     public func map<D: Decodable>(to type: D.Type) -> Single<D> {
         return flatMap { response -> Single<D> in
@@ -53,7 +53,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
 
 // MARK: Observable
 
-extension ObservableType where E == Response {
+extension ObservableType where Element == Response {
     public func map<D: Decodable>(to type: D.Type) -> Observable<D> {
         return flatMap { response -> Observable<D> in
             return .just(try response.map(to: type))
