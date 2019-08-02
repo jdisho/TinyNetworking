@@ -10,7 +10,7 @@ target 'TinyNetworking' do
       use_frameworks!
 
       # Pods for RxTinyNetworking
-      pod 'RxSwift',    '~> 4.0'
+      pod 'RxSwift'
   end
 end
 
