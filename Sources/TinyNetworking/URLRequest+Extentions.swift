@@ -30,6 +30,8 @@ internal extension URLRequest {
                 httpBody = encode(object: anyEncodable)
             }
         }
+        
+        cachePolicy = resource.cachePolicy
     }
 
     func encode<E>(object: E) -> Data? where E : Encodable {

@@ -12,4 +12,5 @@ public protocol ResourceType {
     var endpoint: Endpoint { get }
     var task: Task { get }
     var headers: [String: String] { get }
+    var cachePolicy: URLRequest.CachePolicy { get }
 }

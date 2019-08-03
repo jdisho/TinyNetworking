@@ -45,10 +45,10 @@ Then, run the following command:
 $ pod install
 ```
 ### Carthage 
-*Comming Soon*
+*Coming Soon*
 
 ### Swift Package Manager 
-*Comming Soon*
+*Coming Soon*
 
 ### Manually
 
@@ -98,6 +98,10 @@ extension Unsplash: ResourceType {
   
   var headers: [String: String] {
     return ["Authorization": "Bearer xxx"]
+  }
+  
+  var cachePolicy: URLRequest.CachePolicy {
+    return .useProtocolCachePolicy
   }
 }
 ```
