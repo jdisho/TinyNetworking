@@ -8,19 +8,19 @@
 
 import Foundation
 
-internal enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
-    case delete = "DELETE"
-}
-
 // Endpoint is a combination of HTTPMethod and Path.
 public enum Endpoint {
     case get(path: String)
     case post(path: String)
     case put(path: String)
     case delete(path: String)
+
+    internal enum HTTPMethod: String {
+        case get = "GET"
+        case post = "POST"
+        case put = "PUT"
+        case delete = "DELETE"
+    }
 
     internal var path: String {
         switch self {
@@ -35,13 +35,13 @@ public enum Endpoint {
     internal var method: HTTPMethod {
         switch self {
         case .get:
-            return HTTPMethod.get
+            return .get
         case .post:
-            return HTTPMethod.post
+            return .post
         case .put:
-            return HTTPMethod.put
+            return .put
         case .delete:
-            return HTTPMethod.delete
+            return .delete
         }
     }
 }
