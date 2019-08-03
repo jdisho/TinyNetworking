@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Response {
+public final class Response {
     public let urlRequest: URLRequest
     public let data: Data
 
@@ -21,7 +21,7 @@ public class Response {
         do {
             return try JSONDecoder().decode(type, from: data)
         } catch(let error) {
-            throw TinyNetworkingError.decodingFailed(error)
+            throw Error.decodingFailed(error)
         }
     }
 }

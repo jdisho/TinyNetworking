@@ -9,7 +9,7 @@
 import Foundation
 
 internal extension URLRequest {
-    init(resource: ResourceType) {
+    init(resource: Resource) {
         var url = resource.baseURL.appendingPathComponent(resource.endpoint.path)
 
         if case let .requestWithParameters(parameters, encoding) = resource.task {
@@ -24,17 +24,15 @@ internal extension URLRequest {
             addValue(value, forHTTPHeaderField: key)
         }
 
-        if resource.endpoint.method == .post || resource.endpoint.method == .put {
-            if case let .requestWithEncodable(encodable) = resource.task {
-                let anyEncodable = AnyEncodable(encodable)
-                httpBody = encode(object: anyEncodable)
-            }
+        if resource.endpoint.method == .post || resource.endpoint.method == .put,
+            case let .requestWithEncodable(encodable) = resource.task {
+            httpBody = encode(object: AnyEncodable(encodable))
         }
         
         cachePolicy = resource.cachePolicy
     }
 
-    func encode<E>(object: E) -> Data? where E : Encodable {
+    func encode<E>(object: E) -> Data? where E: Encodable {
         return try? JSONEncoder().encode(object)
     }
 }

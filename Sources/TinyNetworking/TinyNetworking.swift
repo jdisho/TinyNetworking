@@ -8,47 +8,41 @@
 
 import Foundation
 
-public enum TinyNetworkingResult<T> {
-    case success(T)
-    case error(TinyNetworkingError)
-}
-
-public enum TinyNetworkingError: Error {
-    case error(Error?)
+public enum Error: Swift.Error {
+    case error(Swift.Error?)
     case emptyResult
-    case decodingFailed(Error?)
+    case decodingFailed(Swift.Error?)
     case noHttpResponse
     case requestFailed(Data)
 }
 
-
-public class TinyNetworking<Resource: ResourceType>: TinyNetworkingType {
+public class TinyNetworking<R: Resource>: TinyNetworkingType {
 
     public init() {}
 
     @discardableResult
     public func request(
-        resource: Resource,
+        resource: R,
         session: TinyNetworkingSession = URLSession.shared,
         queue: DispatchQueue = .main,
-        completion: @escaping (TinyNetworkingResult<Response>) -> Void
+        completion: @escaping (Result<Response, Error>) -> Void
         ) -> URLSessionDataTask {
         let request = URLRequest(resource: resource)
         return session.loadData(with: request, queue: queue) { data, response, error in
             guard error == nil else {
-                completion(.error(.error(error)))
+                completion(.failure(.error(error)))
                 return
             }
             guard let data = data else {
-                completion(.error(.emptyResult))
+                completion(.failure(.emptyResult))
                 return
             }
             guard let response = response as? HTTPURLResponse else {
-                completion(.error(.noHttpResponse))
+                completion(.failure(.noHttpResponse))
                 return
             }
             guard 200..<300 ~= response.statusCode else {
-                completion(.error(.requestFailed(data)))
+                completion(.failure(.requestFailed(data)))
                 return
             }
 

@@ -21,14 +21,10 @@ public extension Reactive where Base: TinyNetworkingType {
         return Single.create { single in
             let task = self.base.request(resource: resource, session: session, queue: queue) { result in
                 switch result {
-                case let .error(apiError):
-                    single(.error(apiError))
+                case let .failure(error):
+                    single(.error(error))
                 case let .success(response):
-                    single(.success(Response(
-                        urlRequest: response.urlRequest,
-                        data: response.data)
-                        )
-                    )
+                    single(.success(Response(urlRequest: response.urlRequest, data: response.data)))
                 }
             }
 
@@ -42,7 +38,6 @@ public extension Reactive where Base: TinyNetworkingType {
 // MARK: Single
 
 extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
-
     public func map<D: Decodable>(to type: D.Type) -> Single<D> {
         return flatMap { response -> Single<D> in
             return .just(try response.map(to: type))
