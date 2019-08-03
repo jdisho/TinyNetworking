@@ -7,9 +7,10 @@
 
 import Foundation
 
-public protocol ResourceType {
+public protocol Resource {
     var baseURL: URL { get }
     var endpoint: Endpoint { get }
     var task: Task { get }
     var headers: [String: String] { get }
 }
+
