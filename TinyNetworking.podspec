@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'TinyNetworking'
-  spec.version      = '3.1.0'
+  spec.version      = '3.0.0'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/jdisho/TinyNetworking'
   spec.authors      = { 'Joan Disho' => 'dishojoan@gmail.com' }
