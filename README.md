@@ -51,7 +51,7 @@ $ pod install
 
 Add the following as a dependency to your `Package.swift`:
 
- `.package(url: "https://github.com/jdisho/TinyNetworking.git", .upToNextMajor(from: "2.0.0"))`
+ `.package(url: "https://github.com/jdisho/TinyNetworking.git", .upToNextMajor(from: "3.0.0"))`
 
 ### Manually
 
