@@ -15,9 +15,6 @@ public protocol TinyNetworkingSession {
         queue: DispatchQueue,
         completionHandler: @escaping CompletionHandler
         ) -> URLSessionDataTask
-
-    @available(iOS 13.0, *)
-    func loadData(with urlRequest: URLRequest) -> URLSession.DataTaskPublisher
 }
 
 extension URLSession: TinyNetworkingSession {
