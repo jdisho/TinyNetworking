@@ -50,13 +50,5 @@ public class TinyNetworking<R: Resource>: TinyNetworkingType {
             completion(.success(Response(urlRequest: request, data: data)))
         }
     }
-
-    @available(iOS 13.0, *)
-    public func request(
-        resource: R,
-        session: TinyNetworkingSession = URLSession.shared
-        ) -> URLSession.DataTaskPublisher {
-        return session.loadData(with: URLRequest(resource: resource))
-    }
 }
 

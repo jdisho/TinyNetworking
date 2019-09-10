@@ -24,6 +24,8 @@
 		DC320FE4204BFD8E0055A938 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE0204BFD8E0055A938 /* Endpoint.swift */; };
 		DC320FE6204BFD8E0055A938 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE2204BFD8E0055A938 /* TinyNetworking.swift */; };
 		DC320FE7204BFD8E0055A938 /* URLRequest+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */; };
+		DC3E26F923204A6700DB55EA /* TinyNetworkingPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E26F823204A6700DB55EA /* TinyNetworkingPublisher.swift */; };
+		DC3E26FB2320511500DB55EA /* TinyNetworking+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E26FA2320511500DB55EA /* TinyNetworking+Combine.swift */; };
 		DC581D49204F575200FCBB4E /* RxTinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC581D48204F575200FCBB4E /* RxTinyNetworking.swift */; };
 		DC927ACC2070427000B5915E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACB2070427000B5915E /* Task.swift */; };
 		DC927ACE2070427800B5915E /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACD2070427800B5915E /* AnyEncodable.swift */; };
@@ -63,6 +65,8 @@
 		DC320FE0204BFD8E0055A938 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DC320FE2204BFD8E0055A938 /* TinyNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworking.swift; sourceTree = "<group>"; };
 		DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extentions.swift"; sourceTree = "<group>"; };
+		DC3E26F823204A6700DB55EA /* TinyNetworkingPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNetworkingPublisher.swift; sourceTree = "<group>"; };
+		DC3E26FA2320511500DB55EA /* TinyNetworking+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TinyNetworking+Combine.swift"; sourceTree = "<group>"; };
 		DC581D40204F573A00FCBB4E /* RxTinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxTinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC581D43204F573A00FCBB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC581D48204F575200FCBB4E /* RxTinyNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTinyNetworking.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		DC320FC8204BFD760055A938 /* TinyNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				DC3E26F723204A4F00DB55EA /* Combine */,
 				DC927ACB2070427000B5915E /* Task.swift */,
 				DC320FE0204BFD8E0055A938 /* Endpoint.swift */,
 				DC927ACD2070427800B5915E /* AnyEncodable.swift */,
@@ -177,6 +182,15 @@
 				DC320FD6204BFD760055A938 /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		DC3E26F723204A4F00DB55EA /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				DC3E26F823204A6700DB55EA /* TinyNetworkingPublisher.swift */,
+				DC3E26FA2320511500DB55EA /* TinyNetworking+Combine.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		DC581D41204F573A00FCBB4E /* RxTinyNetworking */ = {
@@ -388,6 +402,8 @@
 			files = (
 				DC927ACC2070427000B5915E /* Task.swift in Sources */,
 				DC927ACE2070427800B5915E /* AnyEncodable.swift in Sources */,
+				DC3E26FB2320511500DB55EA /* TinyNetworking+Combine.swift in Sources */,
+				DC3E26F923204A6700DB55EA /* TinyNetworkingPublisher.swift in Sources */,
 				DC9DE1A82058361100BCCA81 /* URL+Extentions.swift in Sources */,
 				DCAED62421A7537C007BDE95 /* URLEncoding.swift in Sources */,
 				DCFD07D5206D7076001F0C35 /* TinyNetworkingType.swift in Sources */,

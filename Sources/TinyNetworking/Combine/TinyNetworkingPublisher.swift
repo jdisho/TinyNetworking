@@ -1,0 +1,46 @@
+//
+//  TinyNetworkingPublisher.swift
+//  TinyNetworking
+//
+//  Created by Joan Disho on 04.09.19.
+//  Copyright © 2019 Joan Disho. All rights reserved.
+//
+
+import Foundation
+import Combine
+
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+internal class TinyNetworkingPublisher<Output>: Publisher {
+    typealias Failure = Error
+
+    private let callback: (AnySubscriber<Output, Error>) -> URLSessionDataTask?
+
+    init(callback: @escaping (AnySubscriber<Output, Error>) -> URLSessionDataTask?) {
+        self.callback = callback
+    }
+
+    func receive<S>(subscriber: S) where S: Subscriber, Failure == S.Failure, Output == S.Input {
+        let subscription = Subscription(subscriber: AnySubscriber(subscriber), callback: callback)
+        subscriber.receive(subscription: subscription)
+    }
+}
+
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+private extension TinyNetworkingPublisher {
+    class Subscription: Combine.Subscription {
+
+        private let dataTask: URLSessionDataTask?
+
+        init(subscriber: AnySubscriber<Output, Error>, callback: @escaping (AnySubscriber<Output, Error>) -> URLSessionDataTask?) {
+            dataTask = callback(subscriber)
+        }
+
+        func request(_ demand: Subscribers.Demand) {
+            // We don't care for the demand.
+        }
+
+        func cancel() {
+            dataTask?.cancel()
+        }
+    }
+}
