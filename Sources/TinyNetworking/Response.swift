@@ -21,7 +21,7 @@ public final class Response {
         do {
             return try JSONDecoder().decode(type, from: data)
         } catch(let error) {
-            throw Error.decodingFailed(error)
+            throw TinyNetworkingError.decoding(error)
         }
     }
 }

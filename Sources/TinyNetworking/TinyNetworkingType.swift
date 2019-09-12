@@ -16,7 +16,7 @@ public protocol TinyNetworkingType {
         resource: Resource,
         session: TinyNetworkingSession,
         queue: DispatchQueue,
-        completion: @escaping (Result<Response, Error>) -> Void
+        completion: @escaping (Result<Response, TinyNetworkingError>) -> Void
         ) -> URLSessionDataTask
 }
 
