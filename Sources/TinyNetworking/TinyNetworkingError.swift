@@ -9,10 +9,25 @@
 import Foundation
 
 public enum TinyNetworkingError: Swift.Error {
-    case noData
+    case noData(Response)
     case statusCode(Response)
-    case decoding(Swift.Error?)
-    case underlying(Swift.Error?)
+    case decoding(Swift.Error, Response)
+    case underlying(Swift.Error, Response?)
+}
+
+public extension TinyNetworkingError {
+    var response: Response? {
+        switch self {
+        case let .noData(response):
+            return response
+        case let .statusCode(response):
+            return response
+        case let .decoding(_, response):
+            return response
+        case let .underlying(_, response):
+            return response
+        }
+    }
 }
 
 extension TinyNetworkingError: LocalizedError {
@@ -24,8 +39,8 @@ extension TinyNetworkingError: LocalizedError {
             return "Status code didn't fall within the given range."
         case .decoding:
             return "Failed to map data to a Decodable object."
-        case let .underlying(error):
-            return error?.localizedDescription
+        case let .underlying(error, _):
+            return error.localizedDescription
         }
     }
 }
