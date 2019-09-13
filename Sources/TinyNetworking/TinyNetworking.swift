@@ -21,22 +21,17 @@ public class TinyNetworking<R: Resource>: TinyNetworkingType {
         completion: @escaping (Result<Response, TinyNetworkingError>) -> Void
         ) -> URLSessionDataTask {
         let request = URLRequest(resource: resource)
-        return session.loadData(with: request, queue: queue) { data, httpURLResponse, error in
-            guard error == nil else {
-                completion(.failure(.underlying(error)))
-                return
-            }
-            guard let data = data else {
-                completion(.failure(.noData))
+        return session.loadData(with: request, queue: queue) { response, error in
+            if let error = error { 
+                completion(.failure(.underlying(error, response)))
                 return
             }
 
-            let response = Response(urlRequest: request, data: data)
-
-            guard let httpURLResponse = httpURLResponse as? HTTPURLResponse,
+            guard
+                let httpURLResponse = response.httpURLResponse,
                 200..<300 ~= httpURLResponse.statusCode else {
-                    completion(.failure(.statusCode(response)))
-                    return
+                completion(.failure(.statusCode(response)))
+                return
             }
 
             completion(.success(response))
