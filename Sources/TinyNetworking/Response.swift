@@ -10,18 +10,29 @@ import Foundation
 
 public final class Response {
     public let urlRequest: URLRequest
-    public let data: Data
+    public let data: Data?
+    public let httpURLResponse: HTTPURLResponse?
 
-    public init(urlRequest: URLRequest, data: Data) {
+    public init(
+        urlRequest: URLRequest,
+        data: Data?,
+        httpURLResponse: HTTPURLResponse?
+    ) {
         self.urlRequest = urlRequest
         self.data = data
+        self.httpURLResponse = httpURLResponse
     }
 
-    public func map<D>(to type: D.Type) throws -> D where D : Decodable {
+    public func map<D: Decodable>(
+        to type: D.Type,
+        decoder: JSONDecoder = JSONDecoder()
+    ) throws -> D {
+        guard let data = data else { throw TinyNetworkingError.noData(self) }
+
         do {
-            return try JSONDecoder().decode(type, from: data)
+            return try decoder.decode(type, from: data)
         } catch(let error) {
-            throw TinyNetworkingError.decoding(error)
+            throw TinyNetworkingError.decoding(error, self)
         }
     }
 }
