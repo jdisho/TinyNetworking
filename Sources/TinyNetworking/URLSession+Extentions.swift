@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol TinyNetworkingSession {
-    typealias CompletionHandler = (Data?, URLResponse?, Swift.Error?) -> Void
+    typealias CompletionHandler = (Response, Swift.Error?) -> Void
     func loadData(
         with urlRequest: URLRequest,
         queue: DispatchQueue,
@@ -21,10 +21,17 @@ extension URLSession: TinyNetworkingSession {
     public func loadData(
         with urlRequest: URLRequest,
         queue: DispatchQueue,
-        completionHandler: @escaping (Data?, URLResponse?, Swift.Error?) -> Void
+        completionHandler: @escaping (Response, Swift.Error?) -> Void
         ) -> URLSessionDataTask {
         let task = dataTask(with: urlRequest) { data, urlResponse, error in
-            queue.async { completionHandler(data, urlResponse, error) }
+            queue.async {
+                let response = Response(
+                    urlRequest: urlRequest,
+                    data: data,
+                    httpURLResponse: urlResponse as? HTTPURLResponse
+                )
+                completionHandler(response, error)
+            }
         }
         task.resume()
         return task
