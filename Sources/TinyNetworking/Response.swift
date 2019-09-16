@@ -25,6 +25,14 @@ public final class Response: CustomDebugStringConvertible {
         return description
     }
 
+    public var prettyJSONString: NSString? {
+        return data?.prettyJSONString
+    }
+
+    public var json: Any? {
+        return data?.json
+    }
+
     public init(
         urlRequest: URLRequest,
         data: Data?,
