@@ -11,11 +11,11 @@ import Combine
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 internal class TinyNetworkingPublisher<Output>: Publisher {
-    typealias Failure = Error
+    typealias Failure = TinyNetworkingError
 
-    private let callback: (AnySubscriber<Output, Error>) -> URLSessionDataTask?
+    private let callback: (AnySubscriber<Output, Failure>) -> URLSessionDataTask?
 
-    init(callback: @escaping (AnySubscriber<Output, Error>) -> URLSessionDataTask?) {
+    init(callback: @escaping (AnySubscriber<Output, Failure>) -> URLSessionDataTask?) {
         self.callback = callback
     }
 
@@ -31,7 +31,7 @@ private extension TinyNetworkingPublisher {
 
         private let dataTask: URLSessionDataTask?
 
-        init(subscriber: AnySubscriber<Output, Error>, callback: @escaping (AnySubscriber<Output, Error>) -> URLSessionDataTask?) {
+        init(subscriber: AnySubscriber<Output, Failure>, callback: @escaping (AnySubscriber<Output, Failure>) -> URLSessionDataTask?) {
             dataTask = callback(subscriber)
         }
 

@@ -9,14 +9,6 @@
 import Foundation
 import Combine
 
-public enum Error: Swift.Error {
-    case error(Swift.Error?)
-    case emptyResult
-    case decodingFailed(Swift.Error?)
-    case noHttpResponse
-    case requestFailed(Data)
-}
-
 public class TinyNetworking<R: Resource>: TinyNetworkingType {
 
     public init() {}
@@ -26,28 +18,23 @@ public class TinyNetworking<R: Resource>: TinyNetworkingType {
         resource: R,
         session: TinyNetworkingSession = URLSession.shared,
         queue: DispatchQueue = .main,
-        completion: @escaping (Result<Response, Error>) -> Void
+        completion: @escaping (Result<Response, TinyNetworkingError>) -> Void
         ) -> URLSessionDataTask {
         let request = URLRequest(resource: resource)
-        return session.loadData(with: request, queue: queue) { data, response, error in
-            guard error == nil else {
-                completion(.failure(.error(error)))
-                return
-            }
-            guard let data = data else {
-                completion(.failure(.emptyResult))
-                return
-            }
-            guard let response = response as? HTTPURLResponse else {
-                completion(.failure(.noHttpResponse))
-                return
-            }
-            guard 200..<300 ~= response.statusCode else {
-                completion(.failure(.requestFailed(data)))
+        return session.loadData(with: request, queue: queue) { response, error in
+            if let error = error { 
+                completion(.failure(.underlying(error, response)))
                 return
             }
 
-            completion(.success(Response(urlRequest: request, data: data)))
+            guard
+                let httpURLResponse = response.httpURLResponse,
+                200..<300 ~= httpURLResponse.statusCode else {
+                completion(.failure(.statusCode(response)))
+                return
+            }
+
+            completion(.success(response))
         }
     }
 }
