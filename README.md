@@ -11,8 +11,8 @@
   </a>
 </p>
 
-**TinyNetworking** is a simple network abstraction layer written in Swift.
-- Just a thin wrapper around NSURLSession.
+- A simple network abstraction layer written in Swift.
+- A thin wrapper around NSURLSession.
 - Supports CRUD methods.
 - Compile-time checking for correct API endpoint accesses.
 - (Optional) RxSwift extensions to the API.
