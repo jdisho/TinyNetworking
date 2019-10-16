@@ -1,34 +1,27 @@
-<p align="center">
-  <img src="https://github.com/jdisho/TinyNetworking/blob/master/Images/tinynetworking-logo.png">
-</p>
-
-<p align="center">
+# 🌩 TinyNetworking
+<p align="left">
   <a href="https://github.com/jdisho/TinyNetworking">
         <img src="https://img.shields.io/cocoapods/p/TinyNetworking.svg?style=flat" />
   </a>
   <a href="https://swift.org">
-        <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" />
+        <img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
   </a>
   <a href="https://cocoapods.org/pods/TinyNetworking">
         <img src="https://img.shields.io/cocoapods/v/TinyNetworking.svg" />
   </a>
- 
 </p>
 
-#
 **TinyNetworking** is a simple network abstraction layer written in Swift.
-
-- 🌯 Just a thin wrapper around NSURLSession.
-- ✌️ Supports CRUD methods.
-- 🚦 Compile-time checking for correct API endpoint accesses.
-- 🐍 (Optional) RxSwift extensions to the API.
-- ❤️ Inspired by [Moya](https://github.com/Moya/Moya).
-- 🎉 No external dependencies. 
+- Just a thin wrapper around NSURLSession.
+- Supports CRUD methods.
+- Compile-time checking for correct API endpoint accesses.
+- (Optional) RxSwift extensions to the API.
+- Inspired by [Moya](https://github.com/Moya/Moya).
+- No external dependencies. 
 
 ## 🛠 Installation
 
 ### CocoaPods
-
 To integrate TinyNetworking into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
@@ -44,21 +37,20 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
+
 ### Carthage 
 *Coming Soon*
 
 ### Swift Package Manager 
-
 Add the following as a dependency to your `Package.swift`:
 
  `.package(url: "https://github.com/jdisho/TinyNetworking.git", .upToNextMajor(from: "3.0.0"))`
 
 ### Manually
-
 If you prefer not to use any of the dependency managers, you can integrate TinyNetworking into your project manually, by downloading the source code and placing the files on your project directory.
 
-## 👨🏻‍💻 Usage
-Set up an `enum` with all of your API resources like this example:
+## 🏃‍♀️ Getting started
+Set up an `enum` with all of your API resources like the following:
 
 ```swift
 enum Unsplash {
@@ -70,26 +62,23 @@ enum Unsplash {
 }
 ```
 
-Extend `enum` and confom to `ResourceType` protocol.
+Extend `enum` and confom to `Resource` protocol.
 
 ```swift
-extension Unsplash: ResourceType {
+extension Unsplash: Resource {
   var baseURL: URL {
-    guard let url = URL(string: "https://api.unsplash.com") else {
-      fatalError("FAILED: https://api.unsplash.com")
-    }
-    return url
+    return URL(string: "https://api.unsplash.com")!
   }
   
   var endpoint: Endpoint {
     switch self {
     case .me:
       return .get(path: "/me")
-    case let .photo(id):
+    case let .photo(id: id):
       return .get(path: "/photos/\(id)")
-    case let .collection(id):
+    case let .collection(id: id):
       return .get(path: "/collections/\(id)")
-    case let .likePhoto(id):
+    case let .likePhoto(id: id):
       return .post(path: "/photos/\(id)/like")
     }
   }
@@ -110,13 +99,12 @@ extension Unsplash: ResourceType {
 ```
 
 ### ⚙️ Making and handling a request
-
 ```swift
 import TinyNetworking
 
 let tinyNetworking = TinyNetworking<Unsplash>()
 
-tinyNetworking.request(.photo("1234")) { response in
+tinyNetworking.request(.photo(id: "1234")) { response in
   switch response {
     case let .success(result):
       let photo = try? result.map(to: Photo.self)
@@ -127,7 +115,7 @@ tinyNetworking.request(.photo("1234")) { response in
 }
 ```
 
-## 🔥 Reactive Extensions
+## 🐍 Reactive Extensions
 Reactive extensions are cool. TinyNetworking provides reactive extensions for RxSwift and **soon** for ReactiveSwift.
 
 ### RxSwift
@@ -139,9 +127,8 @@ return tinyNetworking.rx
 ## ✨ Example
 See [Papr](https://github.com/jdisho/Papr/tree/papr-tinyNetworking-version)
 
-## 🐨 Author
+## 👤 Author
 This tiny library is created with ❤️ by [Joan Disho](https://twitter.com/_disho) at [QuickBird Studios](www.quickbirdstudios.com)
 
 ### 📃 License
-
 TinyNetworking is released under an MIT license. See [License.md](https://github.com/jdisho/TinyNetworking/blob/master/LICENSE) for more information.
