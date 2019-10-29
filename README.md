@@ -105,16 +105,29 @@ import TinyNetworking
 
 let tinyNetworking = TinyNetworking<Unsplash>()
 
-tinyNetworking.request(.photo(id: "1234")) { response in
-  switch response {
-    case let .success(result):
-      let photo = try? result.map(to: Photo.self)
+tinyNetworking.request(.photo(id: "1234")) { result in
+  switch result {
+    case let .success(response):
+      let photo = try? response.map(to: Photo.self)
       print(photo)
     case let .error(error):
       print(error)
   }
 }
 ```
+
+### 🔖 Response
+After making a request, `TinyNetworking` gives a result back in the form of `Result<Response, TinyNetworkingError>`, which has two cases to `switch` over. In case of success, a `Response` object is given, otherwise an error.
+
+The `Response` object gives the possibility to use: 
+- Raw data from the request. 
+- The `URLRequest` object.
+- The HTTP response.
+- Debug description. 
+- The JSON repdesentation of the data.
+- The pretty printed version of the data in a JSON format.
+- Method to map/decode the data to a decodable object. A decodable object, is an object that conforms to `Codable` (`Decodable+Encodable`) protocol.
+
 
 ## 🐍 Reactive Extensions
 Reactive extensions are cool. TinyNetworking provides reactive extensions for Combine, RxSwift and **soon** for ReactiveSwift.
