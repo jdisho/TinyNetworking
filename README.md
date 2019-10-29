@@ -44,7 +44,7 @@ $ pod install
 ### Swift Package Manager 
 Add the following as a dependency to your `Package.swift`:
 
- `.package(url: "https://github.com/jdisho/TinyNetworking.git", .upToNextMajor(from: "3.0.0"))`
+ `.package(url: "https://github.com/jdisho/TinyNetworking.git", .upToNextMajor(from: "4.0.0"))`
 
 ### Manually
 If you prefer not to use any of the dependency managers, you can integrate TinyNetworking into your project manually, by downloading the source code and placing the files on your project directory.
