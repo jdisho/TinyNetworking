@@ -15,6 +15,7 @@
 - A thin wrapper around NSURLSession.
 - Supports CRUD methods.
 - Compile-time checking for correct API endpoint accesses.
+- Combine extensions to the API.
 - (Optional) RxSwift extensions to the API.
 - Inspired by [Moya](https://github.com/Moya/Moya).
 - No external dependencies. 
@@ -116,7 +117,14 @@ tinyNetworking.request(.photo(id: "1234")) { response in
 ```
 
 ## 🐍 Reactive Extensions
-Reactive extensions are cool. TinyNetworking provides reactive extensions for RxSwift and **soon** for ReactiveSwift.
+Reactive extensions are cool. TinyNetworking provides reactive extensions for Combine, RxSwift and **soon** for ReactiveSwift.
+
+### Combine 
+```swift 
+tinyNetworking
+ .requestPublisher(resource: .photos))
+ .map(to: Photo.self)
+```
 
 ### RxSwift
 ```swift
