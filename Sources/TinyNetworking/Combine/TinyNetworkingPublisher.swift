@@ -6,6 +6,8 @@
 //  Copyright © 2019 Joan Disho. All rights reserved.
 //
 
+#if canImport(Combine)
+
 import Foundation
 import Combine
 
@@ -44,3 +46,5 @@ private extension TinyNetworkingPublisher {
         }
     }
 }
+
+#endif

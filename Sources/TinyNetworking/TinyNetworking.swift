@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Combine
 
 public class TinyNetworking<R: Resource>: TinyNetworkingType {
 
