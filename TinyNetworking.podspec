@@ -16,8 +16,7 @@ Pod::Spec.new do |spec|
 
    spec.subspec 'Core' do |ss|
     ss.source_files = 'Sources/TinyNetworking/*.swift'
-    ss.framework  = 'Foundation'
-    ss.framework  = 'Combine'
+    ss.framework  = ['Foundation', 'Combine']
   end
 
    spec.subspec 'RxSwift' do |ss|
