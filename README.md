@@ -1,14 +1,10 @@
 # 🌩 TinyNetworking
 <p align="left">
-  <a href="https://github.com/jdisho/TinyNetworking">
-        <img src="https://img.shields.io/cocoapods/p/TinyNetworking.svg?style=flat" />
-  </a>
-  <a href="https://swift.org">
-        <img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
-  </a>
-  <a href="https://cocoapods.org/pods/TinyNetworking">
-        <img src="https://img.shields.io/cocoapods/v/TinyNetworking.svg" />
-  </a>
+    <img src="https://img.shields.io/badge/Swift-5.1-orange.svg" />
+    <img src="https://img.shields.io/badge/platforms-iOS | macOS | watchOS | tvOS-brightgreen.svg?style=flat" alt="Mac" />
+    <a href="https://twitter.com/_disho">
+        <img src="https://img.shields.io/badge/twitter-@_disho-blue.svg?style=flat" alt="Twitter: @_disho" />
+    </a>
 </p>
 
 - A simple network abstraction layer written in Swift.
@@ -134,9 +130,9 @@ Reactive extensions are cool. TinyNetworking provides reactive extensions for Co
 
 ### Combine 
 ```swift 
-tinyNetworking
- .requestPublisher(resource: .photos))
- .map(to: Photo.self)
+return tinyNetworking
+     .requestPublisher(resource: .photo(id: id))
+     .map(to: Photo.self)
 ```
 
 ### RxSwift
