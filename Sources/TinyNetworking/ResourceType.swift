@@ -15,3 +15,9 @@ public protocol Resource {
     var cachePolicy: URLRequest.CachePolicy { get }
 }
 
+public extension Resource {
+    var cachePolicy: URLRequest.CachePolicy {
+        return .useProtocolCachePolicy
+    }
+}
+
