@@ -12,9 +12,7 @@ import Foundation
 import Combine
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-internal class TinyNetworkingPublisher<Output>: Publisher {
-    typealias Failure = TinyNetworkingError
-
+internal class TinyNetworkingPublisher<Output, Failure>: Publisher where Failure: Swift.Error {
     private let callback: (AnySubscriber<Output, Failure>) -> URLSessionDataTask?
 
     init(callback: @escaping (AnySubscriber<Output, Failure>) -> URLSessionDataTask?) {

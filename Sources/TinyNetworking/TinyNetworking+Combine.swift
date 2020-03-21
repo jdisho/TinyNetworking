@@ -19,7 +19,7 @@ public extension TinyNetworking {
         session: TinyNetworkingSession = URLSession.shared,
         queue: DispatchQueue = .main
         ) -> AnyPublisher<Response, TinyNetworkingError> {
-        let publisher = TinyNetworkingPublisher<Response> { [weak self] subscriber in
+        let publisher = TinyNetworkingPublisher<Response, TinyNetworkingError> { [weak self] subscriber in
             return self?.request(
                 resource: resource,
                 session: session,
