@@ -40,11 +40,17 @@ public extension TinyNetworking {
 }
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-public extension AnyPublisher where Output == Response {
+public extension AnyPublisher where Output == Response, Failure == TinyNetworkingError {
 
-    func map<D: Decodable>(to type: D.Type, decoder: JSONDecoder = .init()) -> AnyPublisher<D, Error> {
+    func map<D: Decodable>(to type: D.Type, decoder: JSONDecoder = .init()) -> AnyPublisher<D, TinyNetworkingError> {
         return compactMap { $0.data }
             .decode(type: type, decoder: decoder)
+            .mapError { error -> TinyNetworkingError in
+                guard let tinyNetworkingError = error as? TinyNetworkingError else {
+                    return .underlying(error, nil)
+                }
+                return tinyNetworkingError
+            }
             .eraseToAnyPublisher()
     }
 }
