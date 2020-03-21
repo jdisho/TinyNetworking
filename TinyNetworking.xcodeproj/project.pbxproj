@@ -25,14 +25,14 @@
 		DC320FE4204BFD8E0055A938 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE0204BFD8E0055A938 /* Endpoint.swift */; };
 		DC320FE6204BFD8E0055A938 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE2204BFD8E0055A938 /* TinyNetworking.swift */; };
 		DC320FE7204BFD8E0055A938 /* URLRequest+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */; };
-		DC3E26F923204A6700DB55EA /* TinyNetworkingPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E26F823204A6700DB55EA /* TinyNetworkingPublisher.swift */; };
-		DC3E26FB2320511500DB55EA /* TinyNetworking+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E26FA2320511500DB55EA /* TinyNetworking+Combine.swift */; };
 		DC581D49204F575200FCBB4E /* RxTinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC581D48204F575200FCBB4E /* RxTinyNetworking.swift */; };
 		DC927ACC2070427000B5915E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACB2070427000B5915E /* Task.swift */; };
 		DC927ACE2070427800B5915E /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACD2070427800B5915E /* AnyEncodable.swift */; };
 		DC927AD02070428400B5915E /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACF2070428400B5915E /* ResourceType.swift */; };
 		DC927AD22070428C00B5915E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927AD12070428C00B5915E /* Response.swift */; };
 		DC9DE1A82058361100BCCA81 /* URL+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DE1A72058361100BCCA81 /* URL+Extentions.swift */; };
+		DCA8603123F9AEDE001FD1B8 /* TinyNetworkingPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8603023F9AEDE001FD1B8 /* TinyNetworkingPublisher.swift */; };
+		DCA8603323F9AEF0001FD1B8 /* TinyNetworking+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8603223F9AEF0001FD1B8 /* TinyNetworking+Combine.swift */; };
 		DCAED62421A7537C007BDE95 /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAED62321A7537C007BDE95 /* URLEncoding.swift */; };
 		DCFD07D5206D7076001F0C35 /* TinyNetworkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD07D3206D7076001F0C35 /* TinyNetworkingType.swift */; };
 		E227DFA5CD66DCF947304FE6 /* Pods_TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */; };
@@ -67,8 +67,6 @@
 		DC320FE0204BFD8E0055A938 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DC320FE2204BFD8E0055A938 /* TinyNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworking.swift; sourceTree = "<group>"; };
 		DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extentions.swift"; sourceTree = "<group>"; };
-		DC3E26F823204A6700DB55EA /* TinyNetworkingPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNetworkingPublisher.swift; sourceTree = "<group>"; };
-		DC3E26FA2320511500DB55EA /* TinyNetworking+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TinyNetworking+Combine.swift"; sourceTree = "<group>"; };
 		DC581D40204F573A00FCBB4E /* RxTinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxTinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC581D43204F573A00FCBB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC581D48204F575200FCBB4E /* RxTinyNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTinyNetworking.swift; sourceTree = "<group>"; };
@@ -77,6 +75,8 @@
 		DC927ACF2070428400B5915E /* ResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
 		DC927AD12070428C00B5915E /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		DC9DE1A72058361100BCCA81 /* URL+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extentions.swift"; sourceTree = "<group>"; };
+		DCA8603023F9AEDE001FD1B8 /* TinyNetworkingPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TinyNetworkingPublisher.swift; path = Sources/TinyNetworking/TinyNetworkingPublisher.swift; sourceTree = SOURCE_ROOT; };
+		DCA8603223F9AEF0001FD1B8 /* TinyNetworking+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TinyNetworking+Combine.swift"; path = "Sources/TinyNetworking/TinyNetworking+Combine.swift"; sourceTree = SOURCE_ROOT; };
 		DCAED62321A7537C007BDE95 /* URLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoding.swift; sourceTree = "<group>"; };
 		DCFD07D3206D7076001F0C35 /* TinyNetworkingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworkingType.swift; sourceTree = "<group>"; };
 		E80D530C0C109729BC53C62F /* Pods_RxTinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,8 +190,8 @@
 		DC3E26F723204A4F00DB55EA /* Combine */ = {
 			isa = PBXGroup;
 			children = (
-				DC3E26F823204A6700DB55EA /* TinyNetworkingPublisher.swift */,
-				DC3E26FA2320511500DB55EA /* TinyNetworking+Combine.swift */,
+				DCA8603023F9AEDE001FD1B8 /* TinyNetworkingPublisher.swift */,
+				DCA8603223F9AEF0001FD1B8 /* TinyNetworking+Combine.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -404,10 +404,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA8603323F9AEF0001FD1B8 /* TinyNetworking+Combine.swift in Sources */,
 				DC927ACC2070427000B5915E /* Task.swift in Sources */,
 				DC927ACE2070427800B5915E /* AnyEncodable.swift in Sources */,
-				DC3E26FB2320511500DB55EA /* TinyNetworking+Combine.swift in Sources */,
-				DC3E26F923204A6700DB55EA /* TinyNetworkingPublisher.swift in Sources */,
 				DC9DE1A82058361100BCCA81 /* URL+Extentions.swift in Sources */,
 				DCAED62421A7537C007BDE95 /* URLEncoding.swift in Sources */,
 				DCFD07D5206D7076001F0C35 /* TinyNetworkingType.swift in Sources */,
@@ -418,6 +417,7 @@
 				DC927AD22070428C00B5915E /* Response.swift in Sources */,
 				DC320FE7204BFD8E0055A938 /* URLRequest+Extentions.swift in Sources */,
 				DC320FE6204BFD8E0055A938 /* TinyNetworking.swift in Sources */,
+				DCA8603123F9AEDE001FD1B8 /* TinyNetworkingPublisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

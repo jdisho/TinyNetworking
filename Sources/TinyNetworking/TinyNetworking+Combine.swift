@@ -39,4 +39,15 @@ public extension TinyNetworking {
     }
 }
 
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public extension AnyPublisher where Output == Response {
+
+    func map<D: Decodable>(to type: D.Type, decoder: JSONDecoder = .init()) -> AnyPublisher<D, Error> {
+        return compactMap { $0.data }
+            .decode(type: type, decoder: decoder)
+            .eraseToAnyPublisher()
+    }
+}
+
+
 #endif
