@@ -106,7 +106,7 @@ tinyNetworking.request(.photo(id: "1234")) { result in
     case let .success(response):
       let photo = try? response.map(to: Photo.self)
       print(photo)
-    case let .error(error):
+    case let .failure(error):
       print(error)
   }
 }
