@@ -9,19 +9,11 @@
 /* Begin PBXBuildFile section */
 		3C04F53947782F8F044C63EE /* Pods_TinyNetworking_RxTinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9864C1C8F2DF90B71F954ACE /* Pods_TinyNetworking_RxTinyNetworking.framework */; };
 		C0A67853232A42BE004BD891 /* TinyNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A67852232A42BE004BD891 /* TinyNetworkingError.swift */; };
-		DC22B6112079483400CEB596 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACB2070427000B5915E /* Task.swift */; };
-		DC22B6122079483400CEB596 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE0204BFD8E0055A938 /* Endpoint.swift */; };
-		DC22B6132079483400CEB596 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACD2070427800B5915E /* AnyEncodable.swift */; };
-		DC22B6142079483400CEB596 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927AD12070428C00B5915E /* Response.swift */; };
-		DC22B6152079483400CEB596 /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927ACF2070428400B5915E /* ResourceType.swift */; };
-		DC22B6162079483400CEB596 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE2204BFD8E0055A938 /* TinyNetworking.swift */; };
-		DC22B6172079483400CEB596 /* TinyNetworkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD07D3206D7076001F0C35 /* TinyNetworkingType.swift */; };
-		DC22B6182079483400CEB596 /* URLRequest+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */; };
-		DC22B6192079483400CEB596 /* URL+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DE1A72058361100BCCA81 /* URL+Extentions.swift */; };
+		D9F09C5E243AFAA500C25FAE /* TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC320FC6204BFD760055A938 /* TinyNetworking.framework */; };
+		D9F09C66243AFBBF00C25FAE /* URL+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F09C64243AFBB700C25FAE /* URL+ExtensionsTests.swift */; };
+		D9F09C69243AFD9900C25FAE /* TinyNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F09C67243AFD8600C25FAE /* TinyNetworkingTests.swift */; };
 		DC22B61B20794AF600CEB596 /* URLSession+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22B61A20794AF600CEB596 /* URLSession+Extentions.swift */; };
 		DC22B61C207950CE00CEB596 /* TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC320FC6204BFD760055A938 /* TinyNetworking.framework */; };
-		DC320FD0204BFD760055A938 /* TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC320FC6204BFD760055A938 /* TinyNetworking.framework */; };
-		DC320FD5204BFD760055A938 /* TinyNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FD4204BFD760055A938 /* TinyNetworkingTests.swift */; };
 		DC320FE4204BFD8E0055A938 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE0204BFD8E0055A938 /* Endpoint.swift */; };
 		DC320FE6204BFD8E0055A938 /* TinyNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE2204BFD8E0055A938 /* TinyNetworking.swift */; };
 		DC320FE7204BFD8E0055A938 /* URLRequest+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */; };
@@ -39,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DC320FD1204BFD760055A938 /* PBXContainerItemProxy */ = {
+		D9F09C5F243AFAA500C25FAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC320FBD204BFD760055A938 /* Project object */;
 			proxyType = 1;
@@ -58,12 +50,13 @@
 		B0BB9B959956EB7D07FB5338 /* Pods_TinyNetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A67852232A42BE004BD891 /* TinyNetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNetworkingError.swift; sourceTree = "<group>"; };
 		C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F09C59243AFAA500C25FAE /* TinyNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F09C5D243AFAA500C25FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F09C64243AFBB700C25FAE /* URL+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		D9F09C67243AFD8600C25FAE /* TinyNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNetworkingTests.swift; sourceTree = "<group>"; };
 		DC22B61A20794AF600CEB596 /* URLSession+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extentions.swift"; sourceTree = "<group>"; };
 		DC320FC6204BFD760055A938 /* TinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC320FCA204BFD760055A938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC320FCF204BFD760055A938 /* TinyNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC320FD4204BFD760055A938 /* TinyNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNetworkingTests.swift; sourceTree = "<group>"; };
-		DC320FD6204BFD760055A938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC320FE0204BFD8E0055A938 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DC320FE2204BFD8E0055A938 /* TinyNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyNetworking.swift; sourceTree = "<group>"; };
 		DC320FE3204BFD8E0055A938 /* URLRequest+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extentions.swift"; sourceTree = "<group>"; };
@@ -84,19 +77,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D9F09C56243AFAA500C25FAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F09C5E243AFAA500C25FAE /* TinyNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC320FC2204BFD760055A938 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E227DFA5CD66DCF947304FE6 /* Pods_TinyNetworking.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC320FCC204BFD760055A938 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC320FD0204BFD760055A938 /* TinyNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,11 +129,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D9F09C5A243AFAA500C25FAE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D9F09C5D243AFAA500C25FAE /* Info.plist */,
+				D9F09C64243AFBB700C25FAE /* URL+ExtensionsTests.swift */,
+				D9F09C67243AFD8600C25FAE /* TinyNetworkingTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		DC320FBC204BFD760055A938 = {
 			isa = PBXGroup;
 			children = (
 				DC581D4C204FE7DD00FCBB4E /* Sources */,
-				DC320FD3204BFD760055A938 /* Tests */,
+				D9F09C5A243AFAA500C25FAE /* Tests */,
 				DC320FC7204BFD760055A938 /* Products */,
 				C81C441F66D8FA6805326D73 /* Pods */,
 				BE7CF738A5C7EB98B4CC287F /* Frameworks */,
@@ -151,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				DC320FC6204BFD760055A938 /* TinyNetworking.framework */,
-				DC320FCF204BFD760055A938 /* TinyNetworkingTests.xctest */,
 				DC581D40204F573A00FCBB4E /* RxTinyNetworking.framework */,
+				D9F09C59243AFAA500C25FAE /* TinyNetworkingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,15 +179,6 @@
 				DC320FCA204BFD760055A938 /* Info.plist */,
 			);
 			path = TinyNetworking;
-			sourceTree = "<group>";
-		};
-		DC320FD3204BFD760055A938 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				DC320FD4204BFD760055A938 /* TinyNetworkingTests.swift */,
-				DC320FD6204BFD760055A938 /* Info.plist */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		DC3E26F723204A4F00DB55EA /* Combine */ = {
@@ -234,6 +228,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D9F09C58243AFAA500C25FAE /* TinyNetworkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9F09C61243AFAA500C25FAE /* Build configuration list for PBXNativeTarget "TinyNetworkingTests" */;
+			buildPhases = (
+				D9F09C55243AFAA500C25FAE /* Sources */,
+				D9F09C56243AFAA500C25FAE /* Frameworks */,
+				D9F09C57243AFAA500C25FAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9F09C60243AFAA500C25FAE /* PBXTargetDependency */,
+			);
+			name = TinyNetworkingTests;
+			productName = TinyNetworkingTests;
+			productReference = D9F09C59243AFAA500C25FAE /* TinyNetworkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DC320FC5204BFD760055A938 /* TinyNetworking */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC320FDA204BFD760055A938 /* Build configuration list for PBXNativeTarget "TinyNetworking" */;
@@ -252,24 +264,6 @@
 			productName = TinyNetworking;
 			productReference = DC320FC6204BFD760055A938 /* TinyNetworking.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		DC320FCE204BFD760055A938 /* TinyNetworkingTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC320FDD204BFD760055A938 /* Build configuration list for PBXNativeTarget "TinyNetworkingTests" */;
-			buildPhases = (
-				DC320FCB204BFD760055A938 /* Sources */,
-				DC320FCC204BFD760055A938 /* Frameworks */,
-				DC320FCD204BFD760055A938 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC320FD2204BFD760055A938 /* PBXTargetDependency */,
-			);
-			name = TinyNetworkingTests;
-			productName = TinyNetworkingTests;
-			productReference = DC320FCF204BFD760055A938 /* TinyNetworkingTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		DC581D3F204F573A00FCBB4E /* RxTinyNetworking */ = {
 			isa = PBXNativeTarget;
@@ -296,17 +290,17 @@
 		DC320FBD204BFD760055A938 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Joan Disho";
 				TargetAttributes = {
+					D9F09C58243AFAA500C25FAE = {
+						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
+					};
 					DC320FC5204BFD760055A938 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1100;
-						ProvisioningStyle = Automatic;
-					};
-					DC320FCE204BFD760055A938 = {
-						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 					DC581D3F204F573A00FCBB4E = {
@@ -330,21 +324,21 @@
 			projectRoot = "";
 			targets = (
 				DC320FC5204BFD760055A938 /* TinyNetworking */,
-				DC320FCE204BFD760055A938 /* TinyNetworkingTests */,
 				DC581D3F204F573A00FCBB4E /* RxTinyNetworking */,
+				D9F09C58243AFAA500C25FAE /* TinyNetworkingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DC320FC4204BFD760055A938 /* Resources */ = {
+		D9F09C57243AFAA500C25FAE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC320FCD204BFD760055A938 /* Resources */ = {
+		DC320FC4204BFD760055A938 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,6 +394,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D9F09C55243AFAA500C25FAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F09C66243AFBBF00C25FAE /* URL+ExtensionsTests.swift in Sources */,
+				D9F09C69243AFD9900C25FAE /* TinyNetworkingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC320FC1204BFD760055A938 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,23 +424,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC320FCB204BFD760055A938 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC22B6192079483400CEB596 /* URL+Extentions.swift in Sources */,
-				DC22B6112079483400CEB596 /* Task.swift in Sources */,
-				DC22B6182079483400CEB596 /* URLRequest+Extentions.swift in Sources */,
-				DC22B6172079483400CEB596 /* TinyNetworkingType.swift in Sources */,
-				DC320FD5204BFD760055A938 /* TinyNetworkingTests.swift in Sources */,
-				DC22B6132079483400CEB596 /* AnyEncodable.swift in Sources */,
-				DC22B6122079483400CEB596 /* Endpoint.swift in Sources */,
-				DC22B6142079483400CEB596 /* Response.swift in Sources */,
-				DC22B6162079483400CEB596 /* TinyNetworking.swift in Sources */,
-				DC22B6152079483400CEB596 /* ResourceType.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DC581D3B204F573A00FCBB4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,14 +435,49 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DC320FD2204BFD760055A938 /* PBXTargetDependency */ = {
+		D9F09C60243AFAA500C25FAE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC320FC5204BFD760055A938 /* TinyNetworking */;
-			targetProxy = DC320FD1204BFD760055A938 /* PBXContainerItemProxy */;
+			targetProxy = D9F09C5F243AFAA500C25FAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		D9F09C62243AFAA500C25FAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9SR3A23TQJ;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = alan.TinyNetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9F09C63243AFAA500C25FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9SR3A23TQJ;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = alan.TinyNetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DC320FD8204BFD760055A938 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -623,36 +644,6 @@
 			};
 			name = Release;
 		};
-		DC320FDE204BFD760055A938 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YLLL7FKAFL;
-				INFOPLIST_FILE = TinyNetworkingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = disho.TinyNetworkingTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DC320FDF204BFD760055A938 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YLLL7FKAFL;
-				INFOPLIST_FILE = TinyNetworkingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = disho.TinyNetworkingTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		DC581D46204F573A00FCBB4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CF8677A2889E794FDF82D98 /* Pods-TinyNetworking-RxTinyNetworking.debug.xcconfig */;
@@ -703,6 +694,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D9F09C61243AFAA500C25FAE /* Build configuration list for PBXNativeTarget "TinyNetworkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F09C62243AFAA500C25FAE /* Debug */,
+				D9F09C63243AFAA500C25FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DC320FC0204BFD760055A938 /* Build configuration list for PBXProject "TinyNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -717,15 +717,6 @@
 			buildConfigurations = (
 				DC320FDB204BFD760055A938 /* Debug */,
 				DC320FDC204BFD760055A938 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC320FDD204BFD760055A938 /* Build configuration list for PBXNativeTarget "TinyNetworkingTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC320FDE204BFD760055A938 /* Debug */,
-				DC320FDF204BFD760055A938 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
