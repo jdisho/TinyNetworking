@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C04F53947782F8F044C63EE /* Pods_TinyNetworking_RxTinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9864C1C8F2DF90B71F954ACE /* Pods_TinyNetworking_RxTinyNetworking.framework */; };
 		C0A67853232A42BE004BD891 /* TinyNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A67852232A42BE004BD891 /* TinyNetworkingError.swift */; };
+		D9D80CDD243C73C7009FAB9F /* TinyNetworkingErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D80CDB243C73A3009FAB9F /* TinyNetworkingErrorTests.swift */; };
 		D9F09C5E243AFAA500C25FAE /* TinyNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC320FC6204BFD760055A938 /* TinyNetworking.framework */; };
 		D9F09C66243AFBBF00C25FAE /* URL+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F09C64243AFBB700C25FAE /* URL+ExtensionsTests.swift */; };
 		D9F09C69243AFD9900C25FAE /* TinyNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F09C67243AFD8600C25FAE /* TinyNetworkingTests.swift */; };
@@ -50,6 +51,7 @@
 		B0BB9B959956EB7D07FB5338 /* Pods_TinyNetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A67852232A42BE004BD891 /* TinyNetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNetworkingError.swift; sourceTree = "<group>"; };
 		C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9D80CDB243C73A3009FAB9F /* TinyNetworkingErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNetworkingErrorTests.swift; sourceTree = "<group>"; };
 		D9F09C59243AFAA500C25FAE /* TinyNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F09C5D243AFAA500C25FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F09C64243AFBB700C25FAE /* URL+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ExtensionsTests.swift"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				D9F09C5D243AFAA500C25FAE /* Info.plist */,
 				D9F09C64243AFBB700C25FAE /* URL+ExtensionsTests.swift */,
 				D9F09C67243AFD8600C25FAE /* TinyNetworkingTests.swift */,
+				D9D80CDB243C73A3009FAB9F /* TinyNetworkingErrorTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			files = (
 				D9F09C66243AFBBF00C25FAE /* URL+ExtensionsTests.swift in Sources */,
 				D9F09C69243AFD9900C25FAE /* TinyNetworkingTests.swift in Sources */,
+				D9D80CDD243C73C7009FAB9F /* TinyNetworkingErrorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
