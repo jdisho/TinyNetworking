@@ -37,12 +37,9 @@ class ResponseTests: XCTestCase {
     }
     
     func test_prettyJSON_success() {
-        struct FooEncodable: Encodable {
-            let params: [String: String]
-        }
+        let data = FooEncodable(params: ["foo": "bar"]).data
         
         let request = URLRequest(resource: FooResource.someEndpoint)
-        let data = try! JSONEncoder().encode(FooEncodable(params: ["foo": "bar"]))
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
@@ -50,14 +47,10 @@ class ResponseTests: XCTestCase {
     }
     
     func test_mapTo_success() {
-        struct FooEncodable: Codable, Equatable {
-            let params: [String: String]
-        }
-        
         let fooInstance = FooEncodable(params: ["foo": "bar"])
+        let data = fooInstance.data
         
         let request = URLRequest(resource: FooResource.someEndpoint)
-        let data = try! JSONEncoder().encode(fooInstance)
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
@@ -65,10 +58,6 @@ class ResponseTests: XCTestCase {
     }
     
     func test_mapTo_error_noData() {
-        struct FooEncodable: Codable, Equatable {
-            let params: [String: String]
-        }
-                
         let request = URLRequest(resource: FooResource.someEndpoint)
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: nil, httpURLResponse: httpURLResponse)
@@ -83,18 +72,9 @@ class ResponseTests: XCTestCase {
     }
     
     func test_mapTo_error_decoding() {
-        struct FooEncodable: Encodable, Equatable {
-            let params: [String: String]
-        }
-        
-        struct BarEncodable: Decodable, Equatable {
-            let foo: Bool
-        }
-        
-        let fooInstance = FooEncodable(params: ["foo": "bar"])
-                
         let request = URLRequest(resource: FooResource.someEndpoint)
-        let data = try! JSONEncoder().encode(fooInstance)
+        let data = FooEncodable(params: ["foo": "bar"]).data
+        
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
