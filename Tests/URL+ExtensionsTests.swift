@@ -12,26 +12,35 @@ import XCTest
 class URLExtensionsTests: XCTestCase {
     
     func test_appendingQueryParameters_withoutParameters() {
-        let url = URL(string: "https://www.google.com")!
+        // Given
+        let url = URL(string: "https://mocky.io")!
         
+        // When
         let result = url.appendingQueryParameters([:], encoding: URLEncoding())
         
-        XCTAssertEqual(result.absoluteString, "https://www.google.com?")
+        // Then
+        XCTAssertEqual(result.absoluteString, "https://mocky.io?")
     }
     
     func test_appendingQueryParameters_withParameters() {
-        let url = URL(string: "https://www.google.com")!
+        // Given
+        let url = URL(string: "https://mocky.io")!
         
+        // WHen
         let result = url.appendingQueryParameters(["foo": "bar", "baz": "qux"], encoding: URLEncoding())
         
-        XCTAssertEqual(result.absoluteString, "https://www.google.com?baz=qux&foo=bar")
+        // Then
+        XCTAssertEqual(result.absoluteString, "https://mocky.io?baz=qux&foo=bar")
     }
     
     func test_appendingQueryParameters_withExistingQuery() {
-        let url = URL(string: "https://www.google.com?baz=qux")!
+        // Given
+        let url = URL(string: "https://mocky.io?baz=qux")!
         
+        // When
         let result = url.appendingQueryParameters(["foo": "bar"], encoding: URLEncoding())
         
-        XCTAssertEqual(result.absoluteString, "https://www.google.com?baz=qux&foo=bar")
+        // Then
+        XCTAssertEqual(result.absoluteString, "https://mocky.io?baz=qux&foo=bar")
     }
 }

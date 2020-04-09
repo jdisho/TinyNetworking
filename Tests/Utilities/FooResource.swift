@@ -16,7 +16,7 @@ enum FooResource {
 
 extension FooResource: Resource {
     var baseURL: URL {
-        return URL(string: "https://api.unsplash.com")!
+        return URL(string: "https://mocky.io")!
     }
     
     var endpoint: Endpoint {

@@ -14,33 +14,33 @@ class ResponseTests: XCTestCase {
     func test_description_withValues() {
         let request = URLRequest(resource: FooResource.getEndpoint)
         let data = Data(base64Encoded: "data")
-        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
-        XCTAssertEqual(response.description, "Requested URL: https://api.unsplash.com/getEndpoint?foo=bar,\nStatus Code: 200,\nData Count: 3")
+        XCTAssertEqual(response.description, "Requested URL: https://mocky.io/getEndpoint?foo=bar,\nStatus Code: 200,\nData Count: 3")
     }
     
     func test_description_withEmpty() {
         let request = URLRequest(resource: FooResource.getEndpoint)
         let response = Response(urlRequest: request, data: nil, httpURLResponse: nil)
         
-        XCTAssertEqual(response.description, "Requested URL: https://api.unsplash.com/getEndpoint?foo=bar,\nStatus Code: -999,\nData Count: -999")
+        XCTAssertEqual(response.description, "Requested URL: https://mocky.io/getEndpoint?foo=bar,\nStatus Code: -999,\nData Count: -999")
     }
     
     func test_debugDescription_success() {
         let request = URLRequest(resource: FooResource.getEndpoint)
         let data = Data(base64Encoded: "data")
-        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
-        XCTAssertEqual(response.debugDescription, "Requested URL: https://api.unsplash.com/getEndpoint?foo=bar,\nStatus Code: 200,\nData Count: 3")
+        XCTAssertEqual(response.debugDescription, "Requested URL: https://mocky.io/getEndpoint?foo=bar,\nStatus Code: 200,\nData Count: 3")
     }
     
     func test_prettyJSON_success() {
         let data = FooEncodable().data
         
         let request = URLRequest(resource: FooResource.getEndpoint)
-        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
         XCTAssertEqual(response.prettyJSONString, "{\n  \"params\" : {\n    \"foo\" : \"bar\"\n  }\n}")
@@ -50,7 +50,7 @@ class ResponseTests: XCTestCase {
         let data = FooEncodable().data
         
         let request = URLRequest(resource: FooResource.getEndpoint)
-        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
         let json = response.json
@@ -65,7 +65,7 @@ class ResponseTests: XCTestCase {
         let data = fooInstance.data
         
         let request = URLRequest(resource: FooResource.getEndpoint)
-        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
         XCTAssertEqual(try! response.map(to: FooEncodable.self), fooInstance)
@@ -73,7 +73,7 @@ class ResponseTests: XCTestCase {
     
     func test_mapTo_error_noData() {
         let request = URLRequest(resource: FooResource.getEndpoint)
-        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: nil, httpURLResponse: httpURLResponse)
         
         XCTAssertThrowsError(try response.map(to: FooEncodable.self), "Should throw error") { error in
@@ -89,7 +89,7 @@ class ResponseTests: XCTestCase {
         let request = URLRequest(resource: FooResource.getEndpoint)
         let data = FooEncodable().data
         
-        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
         XCTAssertThrowsError(try response.map(to: BarEncodable.self), "Should throw error") { error in

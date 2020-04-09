@@ -6,10 +6,13 @@
 //  Copyright © 2020 Joan Disho. All rights reserved.
 //
 
+#if canImport(Combine)
+
 import XCTest
 import Combine
 @testable import TinyNetworking
 
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 class TinyNetworkingCombineTests: XCTestCase {
     
     var cancellables = Set<AnyCancellable>()
@@ -17,7 +20,7 @@ class TinyNetworkingCombineTests: XCTestCase {
     
     func test_requestPublisher_success() {
         let returnData = Data(base64Encoded: "response")
-        let mockSession = MockSession(input: MockSession.Input(data: returnData, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
+        let mockSession = MockSession(input: MockSession.Input(data: returnData, httpURLResponse: HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
         network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main).sink(receiveCompletion: { _ in
             //
         }) { receivedValue in
@@ -26,7 +29,7 @@ class TinyNetworkingCombineTests: XCTestCase {
     }
     
     func test_requestPublisher_error() {
-        let mockSession = MockSession(input: MockSession.Input(data: nil, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 500, httpVersion: nil, headerFields: nil), error: nil))
+        let mockSession = MockSession(input: MockSession.Input(data: nil, httpURLResponse: HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 500, httpVersion: nil, headerFields: nil), error: nil))
         network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main).sink(receiveCompletion: { completion in
             switch completion {
             case let .failure(receivedError):
@@ -42,7 +45,7 @@ class TinyNetworkingCombineTests: XCTestCase {
     func test_map_success() {
         let fooInstance = FooEncodable()
         
-        let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
+        let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
         
         let expectation = XCTestExpectation(description: "Completion")
         network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main)
@@ -58,7 +61,7 @@ class TinyNetworkingCombineTests: XCTestCase {
     func test_map_failure_unhandledError() {
         let fooInstance = FooEncodable()
 
-        let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: FooError.random))
+        let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: FooError.someError))
         
         let expectation = XCTestExpectation(description: "Completion")
         network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main)
@@ -74,7 +77,7 @@ class TinyNetworkingCombineTests: XCTestCase {
     func test_map_failure_underlyingError() {
         let fooInstance = FooEncodable()
 
-        let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
+        let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
         
         let expectation = XCTestExpectation(description: "Completion")
         network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main)
@@ -87,3 +90,5 @@ class TinyNetworkingCombineTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
 }
+
+#endif

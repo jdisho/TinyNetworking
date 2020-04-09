@@ -15,7 +15,7 @@ class URLRequestExtensionsTests: XCTestCase {
         let request = URLRequest(resource: FooResource.getEndpoint)
         
         XCTAssertEqual(request.httpMethod, "GET")
-        XCTAssertEqual(request.url?.absoluteString, "https://api.unsplash.com/getEndpoint?foo=bar")
+        XCTAssertEqual(request.url?.absoluteString, "https://mocky.io/getEndpoint?foo=bar")
         XCTAssertEqual(request.cachePolicy, URLRequest.CachePolicy.useProtocolCachePolicy)
         XCTAssertEqual(request.allHTTPHeaderFields, ["Authorization": "Bearer xxx"])
     }
@@ -24,7 +24,7 @@ class URLRequestExtensionsTests: XCTestCase {
         let request = URLRequest(resource: FooResource.postEndpoint)
         
         XCTAssertEqual(request.httpMethod, "POST")
-        XCTAssertEqual(request.url?.absoluteString, "https://api.unsplash.com/postEndpoint")
+        XCTAssertEqual(request.url?.absoluteString, "https://mocky.io/postEndpoint")
         XCTAssertEqual(request.cachePolicy, URLRequest.CachePolicy.useProtocolCachePolicy)
         XCTAssertEqual(request.httpBody, FooEncodable().data)
     }

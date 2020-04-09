@@ -155,10 +155,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D932E18F243F2E1B00EA7CD8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D9894519243EC143005D4BD3 /* MockSession.swift */,
+				D989451C243EC161005D4BD3 /* FooError.swift */,
+				D9894511243EBCB4005D4BD3 /* Models.swift */,
+				D9894513243EBE03005D4BD3 /* Extensions.swift */,
+				D9894516243EC106005D4BD3 /* FooResource.swift */,
+				D932E18C243F249400EA7CD8 /* URLSessionMock.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D9F09C5A243AFAA500C25FAE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D9F09C5D243AFAA500C25FAE /* Info.plist */,
 				D9F09C64243AFBB700C25FAE /* URL+ExtensionsTests.swift */,
 				D9F09C67243AFD8600C25FAE /* TinyNetworkingTests.swift */,
 				D9D80CDB243C73A3009FAB9F /* TinyNetworkingErrorTests.swift */,
@@ -166,14 +178,10 @@
 				D9040431243D701000F2FCC0 /* ResponseTests.swift */,
 				D9FF6F56243D9DEA005FC9E7 /* EndpointTests.swift */,
 				D9FF6F58243D9F30005FC9E7 /* TinyNetworking+CombineTests.swift */,
-				D9894511243EBCB4005D4BD3 /* Models.swift */,
-				D9894513243EBE03005D4BD3 /* Extensions.swift */,
-				D9894516243EC106005D4BD3 /* FooResource.swift */,
-				D9894519243EC143005D4BD3 /* MockSession.swift */,
-				D989451C243EC161005D4BD3 /* FooError.swift */,
 				D932E185243F116200EA7CD8 /* URLRequest+ExtensionsTests.swift */,
 				D932E189243F211500EA7CD8 /* URLSession+ExtensionsTests.swift */,
-				D932E18C243F249400EA7CD8 /* URLSessionMock.swift */,
+				D9F09C5D243AFAA500C25FAE /* Info.plist */,
+				D932E18F243F2E1B00EA7CD8 /* Utilities */,
 			);
 			path = Tests;
 			sourceTree = "<group>";

@@ -9,5 +9,5 @@
 import Foundation
 
 enum FooError: Swift.Error {
-    case random
+    case someError
 }

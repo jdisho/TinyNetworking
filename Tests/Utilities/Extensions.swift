@@ -6,10 +6,12 @@
 //  Copyright © 2020 Joan Disho. All rights reserved.
 //
 
+#if canImport(Combine)
+
 import Combine
 import XCTest
 
-@available(iOS 13.0, *)
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension Publisher {
     func sinkToResult(_ result: @escaping (Result<Output, Failure>) -> Void) -> AnyCancellable {
         return sink(receiveCompletion: { completion in
@@ -45,3 +47,5 @@ extension Result {
         }
     }
 }
+
+#endif

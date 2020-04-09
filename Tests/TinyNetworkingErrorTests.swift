@@ -11,16 +11,16 @@ import XCTest
 
 class TinyNetworkingErrorTests: XCTestCase {
     
-    let expectedResponse = Response(urlRequest: URLRequest(url: URL(string: "https://www.google.com")!), data: Data(base64Encoded: "response"), httpURLResponse: nil)
+    let expectedResponse = Response(urlRequest: URLRequest(url: URL(string: "https://mocky.io")!), data: Data(base64Encoded: "response"), httpURLResponse: nil)
     
     func test_response_success() {
         XCTAssertEqual(TinyNetworkingError.noData(expectedResponse).response, expectedResponse)
         
         XCTAssertEqual(TinyNetworkingError.statusCode(expectedResponse).response, expectedResponse)
         
-        XCTAssertEqual(TinyNetworkingError.decoding(FooError.random, expectedResponse).response, expectedResponse)
+        XCTAssertEqual(TinyNetworkingError.decoding(FooError.someError, expectedResponse).response, expectedResponse)
         
-        XCTAssertEqual(TinyNetworkingError.underlying(FooError.random, expectedResponse).response, expectedResponse)
+        XCTAssertEqual(TinyNetworkingError.underlying(FooError.someError, expectedResponse).response, expectedResponse)
     }
     
     func test_errorDescription_success() {
@@ -28,9 +28,9 @@ class TinyNetworkingErrorTests: XCTestCase {
         
         XCTAssertEqual(TinyNetworkingError.statusCode(expectedResponse).errorDescription, "Status code didn\'t fall within the given range.")
         
-        XCTAssertEqual(TinyNetworkingError.decoding(FooError.random, expectedResponse).errorDescription, "Failed to map data to a Decodable object.")
+        XCTAssertEqual(TinyNetworkingError.decoding(FooError.someError, expectedResponse).errorDescription, "Failed to map data to a Decodable object.")
         
-        XCTAssertEqual(TinyNetworkingError.underlying(FooError.random, expectedResponse).errorDescription, "The operation couldn’t be completed. (TinyNetworkingTests.FooError error 0.)")
+        XCTAssertEqual(TinyNetworkingError.underlying(FooError.someError, expectedResponse).errorDescription, "The operation couldn’t be completed. (TinyNetworkingTests.FooError error 0.)")
     }
 }
 
