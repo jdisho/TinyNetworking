@@ -18,7 +18,7 @@ class TinyNetworkingCombineTests: XCTestCase {
     func test_requestPublisher_success() {
         let returnData = Data(base64Encoded: "response")
         let mockSession = MockSession(input: MockSession.Input(data: returnData, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
-        network.requestPublisher(resource: .someEndpoint, session: mockSession, queue: .main).sink(receiveCompletion: { _ in
+        network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main).sink(receiveCompletion: { _ in
             //
         }) { receivedValue in
             XCTAssertEqual(receivedValue.data, returnData)
@@ -27,7 +27,7 @@ class TinyNetworkingCombineTests: XCTestCase {
     
     func test_requestPublisher_error() {
         let mockSession = MockSession(input: MockSession.Input(data: nil, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 500, httpVersion: nil, headerFields: nil), error: nil))
-        network.requestPublisher(resource: .someEndpoint, session: mockSession, queue: .main).sink(receiveCompletion: { completion in
+        network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main).sink(receiveCompletion: { completion in
             switch completion {
             case let .failure(receivedError):
                 XCTAssertEqual(receivedError.errorDescription, "Status code didn\'t fall within the given range.")
@@ -40,12 +40,12 @@ class TinyNetworkingCombineTests: XCTestCase {
     }
     
     func test_map_success() {
-        let fooInstance = FooEncodable(params: ["foo": "bar"])
+        let fooInstance = FooEncodable()
         
         let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
         
         let expectation = XCTestExpectation(description: "Completion")
-        network.requestPublisher(resource: .someEndpoint, session: mockSession, queue: .main)
+        network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main)
             .map(to: FooEncodable.self)
             .sinkToResult { result in
                 result.assertSuccess(value: fooInstance)
@@ -56,12 +56,12 @@ class TinyNetworkingCombineTests: XCTestCase {
     }
     
     func test_map_failure_unhandledError() {
-        let fooInstance = FooEncodable(params: ["foo": "bar"])
+        let fooInstance = FooEncodable()
 
         let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: FooError.random))
         
         let expectation = XCTestExpectation(description: "Completion")
-        network.requestPublisher(resource: .someEndpoint, session: mockSession, queue: .main)
+        network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main)
             .map(to: BarEncodable.self)
             .sinkToResult { result in
                 result.assertFailure("The operation couldn’t be completed. (TinyNetworkingTests.FooError error 0.)")
@@ -72,12 +72,12 @@ class TinyNetworkingCombineTests: XCTestCase {
     }
     
     func test_map_failure_underlyingError() {
-        let fooInstance = FooEncodable(params: ["foo": "bar"])
+        let fooInstance = FooEncodable()
 
         let mockSession = MockSession(input: MockSession.Input(data: fooInstance.data, httpURLResponse: HTTPURLResponse(url: URL(string: "https://www.google.com")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
         
         let expectation = XCTestExpectation(description: "Completion")
-        network.requestPublisher(resource: .someEndpoint, session: mockSession, queue: .main)
+        network.requestPublisher(resource: .getEndpoint, session: mockSession, queue: .main)
             .map(to: BarEncodable.self)
             .sinkToResult { result in
                 result.assertFailure("The data couldn’t be read because it is missing.")

@@ -9,7 +9,7 @@
 import Foundation
 
 struct FooEncodable: Codable, Equatable {
-    let params: [String: String]
+    let params = ["foo": "bar"]
 }
 
 struct BarEncodable: Codable, Equatable {

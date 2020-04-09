@@ -10,7 +10,8 @@ import Foundation
 import TinyNetworking
 
 enum FooResource {
-    case someEndpoint
+    case getEndpoint
+    case postEndpoint
 }
 
 extension FooResource: Resource {
@@ -20,14 +21,20 @@ extension FooResource: Resource {
     
     var endpoint: Endpoint {
         switch self {
-        case .someEndpoint:
-            return .get(path: "/someEndpoint")
+        case .getEndpoint:
+            return .get(path: "/getEndpoint")
+        case .postEndpoint:
+            return .post(path: "/postEndpoint")
         }
     }
     
     var task: Task {
-        var params: [String: Any] = [:]
-        return .requestWithParameters(params, encoding: URLEncoding())
+        switch self {
+        case .getEndpoint:
+            return .requestWithParameters(["foo": "bar"], encoding: URLEncoding())
+        case .postEndpoint:
+            return .requestWithEncodable(FooEncodable())
+        }
     }
     
     var headers: [String: String] {

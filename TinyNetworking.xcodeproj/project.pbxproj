@@ -11,7 +11,10 @@
 		C0A67853232A42BE004BD891 /* TinyNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A67852232A42BE004BD891 /* TinyNetworkingError.swift */; };
 		D904042D243D6BAF00F2FCC0 /* URLEncodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D904042B243D6BAC00F2FCC0 /* URLEncodingTests.swift */; };
 		D9040433243D701600F2FCC0 /* ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9040431243D701000F2FCC0 /* ResponseTests.swift */; };
-		D9894512243EBCB4005D4BD3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9894511243EBCB4005D4BD3 /* Models.swift */; };
+		D932E187243F116500EA7CD8 /* URLRequest+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932E185243F116200EA7CD8 /* URLRequest+ExtensionsTests.swift */; };
+		D932E188243F180900EA7CD8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9894511243EBCB4005D4BD3 /* Models.swift */; };
+		D932E18B243F211700EA7CD8 /* URLSession+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932E189243F211500EA7CD8 /* URLSession+ExtensionsTests.swift */; };
+		D932E18E243F259700EA7CD8 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932E18C243F249400EA7CD8 /* URLSessionMock.swift */; };
 		D9894515243EBE44005D4BD3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9894513243EBE03005D4BD3 /* Extensions.swift */; };
 		D9894518243EC10D005D4BD3 /* FooResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9894516243EC106005D4BD3 /* FooResource.swift */; };
 		D989451B243EC14D005D4BD3 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9894519243EC143005D4BD3 /* MockSession.swift */; };
@@ -62,6 +65,9 @@
 		C7B6D6B7EB694FA340950D07 /* Pods_TinyNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinyNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D904042B243D6BAC00F2FCC0 /* URLEncodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodingTests.swift; sourceTree = "<group>"; };
 		D9040431243D701000F2FCC0 /* ResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTests.swift; sourceTree = "<group>"; };
+		D932E185243F116200EA7CD8 /* URLRequest+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		D932E189243F211500EA7CD8 /* URLSession+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		D932E18C243F249400EA7CD8 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		D9894511243EBCB4005D4BD3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D9894513243EBE03005D4BD3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D9894516243EC106005D4BD3 /* FooResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooResource.swift; sourceTree = "<group>"; };
@@ -165,6 +171,9 @@
 				D9894516243EC106005D4BD3 /* FooResource.swift */,
 				D9894519243EC143005D4BD3 /* MockSession.swift */,
 				D989451C243EC161005D4BD3 /* FooError.swift */,
+				D932E185243F116200EA7CD8 /* URLRequest+ExtensionsTests.swift */,
+				D932E189243F211500EA7CD8 /* URLSession+ExtensionsTests.swift */,
+				D932E18C243F249400EA7CD8 /* URLSessionMock.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -428,12 +437,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D932E18E243F259700EA7CD8 /* URLSessionMock.swift in Sources */,
 				D9040433243D701600F2FCC0 /* ResponseTests.swift in Sources */,
+				D932E188243F180900EA7CD8 /* Models.swift in Sources */,
 				D9F09C66243AFBBF00C25FAE /* URL+ExtensionsTests.swift in Sources */,
 				D9F09C69243AFD9900C25FAE /* TinyNetworkingTests.swift in Sources */,
+				D932E18B243F211700EA7CD8 /* URLSession+ExtensionsTests.swift in Sources */,
 				D904042D243D6BAF00F2FCC0 /* URLEncodingTests.swift in Sources */,
 				D9FF6F57243D9DEA005FC9E7 /* EndpointTests.swift in Sources */,
 				D9D80CDD243C73C7009FAB9F /* TinyNetworkingErrorTests.swift in Sources */,
+				D932E187243F116500EA7CD8 /* URLRequest+ExtensionsTests.swift in Sources */,
 				D989451B243EC14D005D4BD3 /* MockSession.swift in Sources */,
 				D9894515243EBE44005D4BD3 /* Extensions.swift in Sources */,
 				D9894518243EC10D005D4BD3 /* FooResource.swift in Sources */,
@@ -454,7 +467,6 @@
 				DCFD07D5206D7076001F0C35 /* TinyNetworkingType.swift in Sources */,
 				DC927AD02070428400B5915E /* ResourceType.swift in Sources */,
 				C0A67853232A42BE004BD891 /* TinyNetworkingError.swift in Sources */,
-				D9894512243EBCB4005D4BD3 /* Models.swift in Sources */,
 				DC22B61B20794AF600CEB596 /* URLSession+Extentions.swift in Sources */,
 				DC320FE4204BFD8E0055A938 /* Endpoint.swift in Sources */,
 				DC927AD22070428C00B5915E /* Response.swift in Sources */,
