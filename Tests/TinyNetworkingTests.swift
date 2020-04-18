@@ -1,9 +1,9 @@
 //
 //  TinyNetworkingTests.swift
-//  TinyNetworkingTests
+//  TinyNetworking
 //
-//  Created by Joan Disho on 04.03.18.
-//  Copyright © 2018 Joan Disho. All rights reserved.
+//  Created by Alan Steiman on 06/04/2020.
+//  Copyright © 2020 Joan Disho. All rights reserved.
 //
 
 import XCTest
@@ -11,26 +11,57 @@ import XCTest
 
 class TinyNetworkingTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let network = TinyNetworking<FooResource>()
+    
+    func test_init_notNil() {
+        XCTAssertNotNil(network)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_request_failure_underlyingError() {
+        let mockSession = MockSession(input: MockSession.Input(data: nil, httpURLResponse: nil, error: FooError.someError))
+        
+        network.request(resource: .getEndpoint, session: mockSession, queue: .main) { result in
+            switch result {
+            case .success(_):
+                XCTFail("Unexpected success response")
+            case let .failure(error):
+                if case let TinyNetworkingError.underlying(underlyingError, _) = error {
+                    XCTAssertEqual(underlyingError as? FooError, FooError.someError)
+                } else {
+                    XCTFail("Error type does not match")
+                }
+            }
         }
     }
     
+    func test_request_failure_httpError() {
+        let mockSession = MockSession(input: MockSession.Input(data: nil, httpURLResponse: HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 500, httpVersion: nil, headerFields: nil), error: nil))
+        
+        network.request(resource: .getEndpoint, session: mockSession, queue: .main) { result in
+            switch result {
+            case .success(_):
+                XCTFail("Unexpected success response")
+            case let .failure(error):
+                if case let TinyNetworkingError.statusCode(response) = error {
+                    XCTAssertEqual(response.httpURLResponse?.statusCode, 500)
+                } else {
+                    XCTFail("Error type does not match")
+                }
+            }
+        }
+    }
+    
+    func test_request_success() {
+        let returnData = Data(base64Encoded: "response")
+        let mockSession = MockSession(input: MockSession.Input(data: returnData, httpURLResponse: HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil), error: nil))
+        
+        network.request(resource: .getEndpoint, session: mockSession, queue: .main) { result in
+            switch result {
+            case let .success(response):
+                XCTAssertEqual(response.data, returnData)
+            case .failure(_):
+                XCTFail("Unexpected error response")
+            }
+        }
+    }
 }
