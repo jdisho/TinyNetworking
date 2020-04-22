@@ -37,13 +37,20 @@ public struct URLEncoding {
             }
         }
     }
+    
+    public enum Destination {
+        case urlQuery
+        case httpBody
+    }
 
     public let arrayEncoding: ArrayEncoding
     public let boolEncoding: BoolEncoding
+    public let destination: Destination
 
-    public init(arrayEncoding: ArrayEncoding = .brackets, boolEncoding: BoolEncoding = .literal) {
+    public init(destination: Destination, arrayEncoding: ArrayEncoding = .brackets, boolEncoding: BoolEncoding = .literal) {
         self.arrayEncoding = arrayEncoding
         self.boolEncoding = boolEncoding
+        self.destination = destination
     }
 
     public func query(_ parameters: [String: Any]) -> String {

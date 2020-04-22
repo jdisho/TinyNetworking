@@ -12,7 +12,7 @@ internal extension URLRequest {
     init(resource: Resource) {
         var url = resource.baseURL.appendingPathComponent(resource.endpoint.path)
 
-        if case let .requestWithParameters(parameters, encoding) = resource.task {
+        if case let .requestWithParameters(parameters, encoding) = resource.task, encoding.destination == .urlQuery {
             url = url.appendingQueryParameters(parameters, encoding: encoding)
         }
 
@@ -27,6 +27,8 @@ internal extension URLRequest {
         if resource.endpoint.method == .post || resource.endpoint.method == .put,
             case let .requestWithEncodable(encodable) = resource.task {
             httpBody = encode(object: AnyEncodable(encodable))
+        } else if case let .requestWithParameters(parameters, encoding) = resource.task, encoding.destination == .httpBody {
+            httpBody = encoding.query(parameters).data(using: .utf8)
         }
         
         cachePolicy = resource.cachePolicy
