@@ -16,7 +16,7 @@ class URLExtensionsTests: XCTestCase {
         let url = URL(string: "https://mocky.io")!
         
         // When
-        let result = url.appendingQueryParameters([:], encoding: URLEncoding(destination: .urlQuery))
+        let result = url.appendingQueryParameters([:], encoding: URLEncoding())
         
         // Then
         XCTAssertEqual(result.absoluteString, "https://mocky.io?")
@@ -27,7 +27,7 @@ class URLExtensionsTests: XCTestCase {
         let url = URL(string: "https://mocky.io")!
         
         // WHen
-        let result = url.appendingQueryParameters(["foo": "bar", "baz": "qux"], encoding: URLEncoding(destination: .urlQuery))
+        let result = url.appendingQueryParameters(["foo": "bar", "baz": "qux"], encoding: URLEncoding())
         
         // Then
         XCTAssertEqual(result.absoluteString, "https://mocky.io?baz=qux&foo=bar")
@@ -38,7 +38,7 @@ class URLExtensionsTests: XCTestCase {
         let url = URL(string: "https://mocky.io?baz=qux")!
         
         // When
-        let result = url.appendingQueryParameters(["foo": "bar"], encoding: URLEncoding(destination: .urlQuery))
+        let result = url.appendingQueryParameters(["foo": "bar"], encoding: URLEncoding())
         
         // Then
         XCTAssertEqual(result.absoluteString, "https://mocky.io?baz=qux&foo=bar")

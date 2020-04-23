@@ -47,7 +47,7 @@ public struct URLEncoding {
     public let boolEncoding: BoolEncoding
     public let destination: Destination
 
-    public init(destination: Destination, arrayEncoding: ArrayEncoding = .brackets, boolEncoding: BoolEncoding = .literal) {
+    public init(destination: Destination = .urlQuery, arrayEncoding: ArrayEncoding = .brackets, boolEncoding: BoolEncoding = .literal) {
         self.arrayEncoding = arrayEncoding
         self.boolEncoding = boolEncoding
         self.destination = destination
