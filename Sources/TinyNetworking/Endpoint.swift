@@ -44,4 +44,13 @@ public enum Endpoint {
             return .delete
         }
     }
+    
+    internal var defaultParamDestination: ParamDestination {
+        switch self {
+        case .get:
+            return .urlQuery
+        case .post, .put, .delete:
+            return .httpBody
+        }
+    }
 }

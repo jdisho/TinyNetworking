@@ -12,7 +12,7 @@ import XCTest
 class ResponseTests: XCTestCase {
     
     func test_description_withValues() {
-        let request = URLRequest(resource: FooResource.getEndpoint)
+        let request = URLRequest(resource: FooResource.getEndpointQueryParams)
         let data = Data(base64Encoded: "data")
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
@@ -21,14 +21,14 @@ class ResponseTests: XCTestCase {
     }
     
     func test_description_withEmpty() {
-        let request = URLRequest(resource: FooResource.getEndpoint)
+        let request = URLRequest(resource: FooResource.getEndpointQueryParams)
         let response = Response(urlRequest: request, data: nil, httpURLResponse: nil)
         
         XCTAssertEqual(response.description, "Requested URL: https://mocky.io/getEndpoint?foo=bar,\nStatus Code: -999,\nData Count: -999")
     }
     
     func test_debugDescription_success() {
-        let request = URLRequest(resource: FooResource.getEndpoint)
+        let request = URLRequest(resource: FooResource.getEndpointQueryParams)
         let data = Data(base64Encoded: "data")
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
@@ -39,7 +39,7 @@ class ResponseTests: XCTestCase {
     func test_prettyJSON_success() {
         let data = FooEncodable().data
         
-        let request = URLRequest(resource: FooResource.getEndpoint)
+        let request = URLRequest(resource: FooResource.getEndpointQueryParams)
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
@@ -49,7 +49,7 @@ class ResponseTests: XCTestCase {
     func test_json_success() {
         let data = FooEncodable().data
         
-        let request = URLRequest(resource: FooResource.getEndpoint)
+        let request = URLRequest(resource: FooResource.getEndpointQueryParams)
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
@@ -64,7 +64,7 @@ class ResponseTests: XCTestCase {
         let fooInstance = FooEncodable()
         let data = fooInstance.data
         
-        let request = URLRequest(resource: FooResource.getEndpoint)
+        let request = URLRequest(resource: FooResource.getEndpointQueryParams)
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: data, httpURLResponse: httpURLResponse)
         
@@ -72,7 +72,7 @@ class ResponseTests: XCTestCase {
     }
     
     func test_mapTo_error_noData() {
-        let request = URLRequest(resource: FooResource.getEndpoint)
+        let request = URLRequest(resource: FooResource.getEndpointQueryParams)
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         let response = Response(urlRequest: request, data: nil, httpURLResponse: httpURLResponse)
         
@@ -86,7 +86,7 @@ class ResponseTests: XCTestCase {
     }
     
     func test_mapTo_error_decoding() {
-        let request = URLRequest(resource: FooResource.getEndpoint)
+        let request = URLRequest(resource: FooResource.getEndpointQueryParams)
         let data = FooEncodable().data
         
         let httpURLResponse = HTTPURLResponse(url: URL(string: "https://mocky.io")!, statusCode: 200, httpVersion: nil, headerFields: nil)

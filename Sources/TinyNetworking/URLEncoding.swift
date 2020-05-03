@@ -40,10 +40,12 @@ public struct URLEncoding {
 
     public let arrayEncoding: ArrayEncoding
     public let boolEncoding: BoolEncoding
+    public let destination: ParamDestination?
 
-    public init(arrayEncoding: ArrayEncoding = .brackets, boolEncoding: BoolEncoding = .literal) {
+    public init(destination: ParamDestination? = nil, arrayEncoding: ArrayEncoding = .brackets, boolEncoding: BoolEncoding = .literal) {
         self.arrayEncoding = arrayEncoding
         self.boolEncoding = boolEncoding
+        self.destination = destination
     }
 
     public func query(_ parameters: [String: Any]) -> String {

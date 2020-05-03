@@ -13,7 +13,7 @@ class URLSessionExtensionsTests: XCTestCase {
         
     func test_loadData_success() {
         let expectation = XCTestExpectation()
-        _ = URLSession.mocked.loadData(with: URLRequest(resource: FooResource.getEndpoint), queue: .main) { (response, error) in
+        _ = URLSession.mocked.loadData(with: URLRequest(resource: FooResource.getEndpointQueryParams), queue: .main) { (response, error) in
             XCTAssertEqual(response.data, FooEncodable().data)
             XCTAssertNil(error)
             expectation.fulfill()
