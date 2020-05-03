@@ -12,7 +12,9 @@ import TinyNetworking
 enum FooResource {
     case getEndpointQueryParams
     case getEndpointHttpBody
+    case getEndpointNoDestination
     case postEndpoint
+    case postEndpointNoDestination
 }
 
 extension FooResource: Resource {
@@ -22,11 +24,9 @@ extension FooResource: Resource {
     
     var endpoint: Endpoint {
         switch self {
-        case .getEndpointQueryParams:
+        case .getEndpointQueryParams, .getEndpointHttpBody, .getEndpointNoDestination:
             return .get(path: "/getEndpoint")
-        case .getEndpointHttpBody:
-            return .get(path: "/getEndpoint")
-        case .postEndpoint:
+        case .postEndpoint, .postEndpointNoDestination:
             return .post(path: "/postEndpoint")
         }
     }
@@ -37,8 +37,12 @@ extension FooResource: Resource {
             return .requestWithParameters(["foo": "bar"], encoding: URLEncoding(destination: .urlQuery))
         case .getEndpointHttpBody:
             return .requestWithParameters(["foo": "bar"], encoding: URLEncoding(destination: .httpBody))
+        case .getEndpointNoDestination:
+            return .requestWithParameters(["foo": "bar"], encoding: URLEncoding())
         case .postEndpoint:
             return .requestWithEncodable(FooEncodable())
+        case .postEndpointNoDestination:
+            return .requestWithParameters(["foo": "bar"], encoding: URLEncoding())
         }
     }
     

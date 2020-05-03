@@ -42,4 +42,19 @@ class URLRequestExtensionsTests: XCTestCase {
         XCTAssertEqual(request.url?.absoluteString, "https://mocky.io/getEndpoint")
         XCTAssertEqual(request.httpBody, "foo=bar".data(using: .utf8))
     }
+    
+    func test_defaultGetParamDestination_urlQuery() {
+        let request = URLRequest(resource: FooResource.getEndpointNoDestination)
+        
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertEqual(request.url?.absoluteString, "https://mocky.io/getEndpoint?foo=bar")
+    }
+    
+    func test_defaultPostParamDestination_httpBody() {
+        let request = URLRequest(resource: FooResource.postEndpointNoDestination)
+        
+        XCTAssertEqual(request.httpMethod, "POST")
+        XCTAssertEqual(request.url?.absoluteString, "https://mocky.io/postEndpoint")
+        XCTAssertEqual(request.httpBody, "foo=bar".data(using: .utf8))
+    }
 }

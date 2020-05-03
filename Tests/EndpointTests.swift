@@ -24,4 +24,11 @@ class EndpointTests: XCTestCase {
         XCTAssertEqual(Endpoint.post(path: "foo").path, "foo")
         XCTAssertEqual(Endpoint.delete(path: "foo").path, "foo")
     }
+    
+    func test_defaultParamDestination_success() {
+        XCTAssertEqual(Endpoint.get(path: "foo").defaultParamDestination, ParamDestination.urlQuery)
+        XCTAssertEqual(Endpoint.post(path: "foo").defaultParamDestination, ParamDestination.httpBody)
+        XCTAssertEqual(Endpoint.put(path: "foo").defaultParamDestination, ParamDestination.httpBody)
+        XCTAssertEqual(Endpoint.delete(path: "foo").defaultParamDestination, ParamDestination.httpBody)
+    }
 }

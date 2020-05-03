@@ -11,8 +11,10 @@ import Foundation
 internal extension URLRequest {
     init(resource: Resource) {
         var url = resource.baseURL.appendingPathComponent(resource.endpoint.path)
+        
+        
 
-        if case let .requestWithParameters(parameters, encoding) = resource.task, encoding.destination == .urlQuery {
+        if case let .requestWithParameters(parameters, encoding) = resource.task, (encoding.destination ?? resource.endpoint.defaultParamDestination) == .urlQuery {
             url = url.appendingQueryParameters(parameters, encoding: encoding)
         }
 
@@ -27,7 +29,7 @@ internal extension URLRequest {
         if resource.endpoint.method == .post || resource.endpoint.method == .put,
             case let .requestWithEncodable(encodable) = resource.task {
             httpBody = encode(object: AnyEncodable(encodable))
-        } else if case let .requestWithParameters(parameters, encoding) = resource.task, encoding.destination == .httpBody {
+        } else if case let .requestWithParameters(parameters, encoding) = resource.task, (encoding.destination ?? resource.endpoint.defaultParamDestination) == .httpBody {
             httpBody = encoding.query(parameters).data(using: .utf8)
         }
         
