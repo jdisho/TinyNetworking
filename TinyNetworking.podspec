@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'TinyNetworking'
-  spec.version      = '4.0.1'
+  spec.version      = '5.0.0'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/jdisho/TinyNetworking'
   spec.authors      = { 'Joan Disho' => 'dishojoan@gmail.com' }
@@ -22,6 +22,6 @@ Pod::Spec.new do |spec|
    spec.subspec 'RxSwift' do |ss|
     ss.source_files = 'Sources/RxTinyNetworking/*.swift'
     ss.dependency 'TinyNetworking/Core'
-    ss.dependency 'RxSwift', '~> 5.0'
+    ss.dependency 'RxSwift', '~> 6.0.0'
   end
 end
