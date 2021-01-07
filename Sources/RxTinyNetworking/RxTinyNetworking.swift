@@ -22,7 +22,7 @@ public extension Reactive where Base: TinyNetworkingType {
             let task = self.base.request(resource: resource, session: session, queue: queue) { result in
                 switch result {
                 case let .failure(error):
-                    single(.error(error))
+                    single(.failure(error))
                 case let .success(response):
                     single(.success(response))
                 }
